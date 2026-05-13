@@ -6,14 +6,10 @@
 
   <title>e Reservasi Rakor APKESMI KP 16 Mei 2026</title>
 
-  <!-- Favicon -->
+  <!-- FAVICON -->
   <link rel="icon"
-    href="https://drive.google.com/uc?export=view&id=1dcDu5DSWJl2Gk3cl4sgklACvxGnUyVju"
+    href="https://lh3.googleusercontent.com/d/1dcDu5DSWJl2Gk3cl4sgklACvxGnUyVju"
     type="image/png">
-
-  <!-- Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <style>
 
@@ -27,7 +23,7 @@
       width:100%;
       height:100%;
       overflow:hidden;
-      font-family:'Poppins',sans-serif;
+      font-family:Arial, sans-serif;
       background:#0f172a;
     }
 
@@ -44,7 +40,9 @@
       background:white;
     }
 
-    /* ===== LOADING SCREEN ===== */
+    /* =======================
+       LOADING SCREEN
+    ======================= */
 
     .loader-screen{
       position:absolute;
@@ -67,7 +65,7 @@
       transition:all .6s ease;
     }
 
-    /* BACKGROUND BLUR CIRCLE */
+    /* BACKGROUND EFFECT */
 
     .bg-circle{
       position:absolute;
@@ -77,11 +75,11 @@
     }
 
     .circle1{
-      width:250px;
-      height:250px;
+      width:260px;
+      height:260px;
       background:#38bdf8;
-      top:-50px;
-      left:-50px;
+      top:-80px;
+      left:-80px;
     }
 
     .circle2{
@@ -92,22 +90,24 @@
       right:-80px;
     }
 
-    /* BOX */
+    /* CARD */
 
     .loader-box{
+
       position:relative;
       z-index:10;
 
       width:90%;
-      max-width:340px;
+      max-width:360px;
+
+      padding:40px 28px;
+
+      border-radius:32px;
 
       text-align:center;
 
-      padding:35px 28px;
-
-      border-radius:30px;
-
-      background:rgba(255,255,255,0.08);
+      background:
+      rgba(255,255,255,0.08);
 
       backdrop-filter:blur(16px);
 
@@ -121,14 +121,16 @@
     /* LOGO */
 
     .logo-wrapper{
+
       width:120px;
       height:120px;
 
       margin:auto;
 
-      border-radius:28px;
+      border-radius:30px;
 
-      background:rgba(255,255,255,.08);
+      background:
+      rgba(255,255,255,0.08);
 
       display:flex;
       justify-content:center;
@@ -138,44 +140,53 @@
     }
 
     .logo-wrapper img{
-      width:78px;
-      height:78px;
+
+      width:80px;
+      height:80px;
+
       object-fit:contain;
+      display:block;
     }
 
-    /* TEXT */
+    /* TITLE */
 
     .app-title{
-      margin-top:24px;
 
-      font-size:1.2rem;
+      margin-top:28px;
+
+      font-size:1.15rem;
       font-weight:700;
-      line-height:1.5;
+      line-height:1.6;
     }
 
     .subtitle{
-      margin-top:10px;
 
-      font-size:.92rem;
-      color:#cbd5e1;
+      margin-top:12px;
+
+      font-size:.95rem;
+
+      color:#dbeafe;
     }
 
-    /* PROGRESS */
+    /* PROGRESS BAR */
 
     .progress{
-      margin-top:30px;
 
       width:100%;
       height:10px;
 
+      margin-top:32px;
+
       border-radius:999px;
 
-      background:rgba(255,255,255,.12);
+      background:
+      rgba(255,255,255,.15);
 
       overflow:hidden;
     }
 
     .progress-bar{
+
       width:40%;
       height:100%;
 
@@ -192,12 +203,12 @@
     }
 
     .loading-text{
-      margin-top:16px;
 
-      font-size:.85rem;
-      color:#e2e8f0;
+      margin-top:18px;
 
-      letter-spacing:.4px;
+      font-size:.9rem;
+
+      color:#f1f5f9;
     }
 
     /* ANIMATION */
@@ -221,7 +232,7 @@
       }
 
       50%{
-        transform:translateY(-12px);
+        transform:translateY(-10px);
       }
 
     }
@@ -238,20 +249,20 @@
 
   <div class="iframe-container">
 
-    <!-- LOADING SCREEN -->
+    <!-- LOADING -->
     <div class="loader-screen" id="loader">
 
-      <!-- BG EFFECT -->
+      <!-- BACKGROUND -->
       <div class="bg-circle circle1"></div>
       <div class="bg-circle circle2"></div>
 
-      <!-- CONTENT -->
+      <!-- CARD -->
       <div class="loader-box">
 
         <!-- LOGO -->
         <div class="logo-wrapper">
           <img
-            src="https://drive.google.com/uc?export=view&id=1dcDu5DSWJl2Gk3cl4sgklACvxGnUyVju"
+            src="https://lh3.googleusercontent.com/d/1dcDu5DSWJl2Gk3cl4sgklACvxGnUyVju"
             alt="Logo APKESMI">
         </div>
 
@@ -261,7 +272,7 @@
           APKESMI Kulon Progo
         </div>
 
-        <!-- SUBTITLE -->
+        <!-- DATE -->
         <div class="subtitle">
           16 Mei 2026
         </div>
