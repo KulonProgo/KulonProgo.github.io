@@ -4,10 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>e Form Update Register Puskesmas Kulon Progo Tahun 2026</title>
+<title>
+e Form Update Register Puskesmas Kulon Progo Tahun 2026
+</title>
 
+<!-- FAVICON -->
 <link rel="icon"
-href="https://lh3.googleusercontent.com/d/1MIRHMi7eVL9qDRNW-SDs4NxR1WXx-ixk"
+href="https://lh3.googleusercontent.com/d/1dcDu5DSWJl2Gk3cl4sgklACvxGnUyVju"
 type="image/png">
 
 <style>
@@ -39,11 +42,12 @@ border:none;
 background:white;
 }
 
-/* SPLASH */
+/* SPLASH SCREEN */
 
 .loader-screen{
 position:absolute;
 inset:0;
+
 z-index:9999;
 
 display:flex;
@@ -58,7 +62,7 @@ radial-gradient(circle at top left,#12385d,#081120 60%);
 transition:.7s;
 }
 
-/* BACKGROUND GLOW */
+/* GLOW EFFECT */
 
 .glow{
 position:absolute;
@@ -115,7 +119,7 @@ box-shadow:
 0 10px 50px rgba(0,0,0,.35);
 }
 
-/* LOGO */
+/* LOGO CONTAINER */
 
 .logo-wrapper{
 
@@ -139,6 +143,8 @@ inset 0 0 25px rgba(255,255,255,.05);
 animation:float 3s ease-in-out infinite;
 }
 
+/* LOGO CIRCLE */
+
 .logo-circle{
 
 width:105px;
@@ -157,6 +163,8 @@ box-shadow:
 0 8px 25px rgba(0,0,0,.25);
 }
 
+/* LOGO */
+
 .logo-circle img{
 
 width:100%;
@@ -166,7 +174,7 @@ border-radius:50%;
 object-fit:cover;
 }
 
-/* TEXT */
+/* TITLE */
 
 .app-title{
 
@@ -183,7 +191,6 @@ line-height:1.6;
 margin-top:15px;
 
 font-size:1rem;
-
 color:#cbd5e1;
 }
 
@@ -279,10 +286,11 @@ visibility:hidden;
 <div class="logo-circle">
 
 <img
-src="https://lh3.googleusercontent.com/d/1MIRHMi7eVL9qDRNW-SDs4NxR1WXx-ixk"
-alt="Logo Inovasi Digital Puskesmas">
+src="https://lh3.googleusercontent.com/d/1dcDu5DSWJl2Gk3cl4sgklACvxGnUyVju"
+alt="Logo Puskesmas">
 
 </div>
+
 </div>
 
 <div class="app-title">
@@ -303,11 +311,12 @@ Memuat aplikasi...
 </div>
 
 </div>
+
 </div>
 
 <iframe
 src="https://script.google.com/a/~/macros/s/AKfycbzHBcxnXfNb_qiylJsOkU03f03Q2A9AfFdsjUUCPndV_r-8ltFZn7v5FCkyu93zU3Jv9g/exec"
-title="e Form Update Register Puskesmas Kulon Progo"
+title="e Form Update Register Puskesmas"
 allowfullscreen
 onload="hideLoader()">
 </iframe>
@@ -319,11 +328,11 @@ onload="hideLoader()">
 function hideLoader(){
 
 const loader =
-document.getElementById('loader');
+document.getElementById("loader");
 
 setTimeout(()=>{
 
-loader.classList.add('fade-out');
+loader.classList.add("fade-out");
 
 },1200);
 
