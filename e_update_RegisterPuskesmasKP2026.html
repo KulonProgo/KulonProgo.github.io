@@ -1,634 +1,335 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>e Form Update Register Puskesmas Kulon Progo Tahun 2026</title>
+<title>e Form Update Register Puskesmas Kulon Progo Tahun 2026</title>
 
-  <!-- FAVICON -->
-  <link rel="icon"
-    href="https://lh3.googleusercontent.com/d/1MIRHMi7eVL9qDRNW-SDs4NxR1WXx-ixk"
-    type="image/png">
+<link rel="icon"
+href="https://lh3.googleusercontent.com/d/1MIRHMi7eVL9qDRNW-SDs4NxR1WXx-ixk"
+type="image/png">
 
-  <style>
+<style>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    html, body{
-      width:100%;
-      height:100%;
-      overflow:hidden;
-      font-family:'Segoe UI',sans-serif;
-      background:#081120;
-    }
+html,body{
+width:100%;
+height:100%;
+overflow:hidden;
+font-family:'Segoe UI',sans-serif;
+background:#081120;
+}
 
-    .iframe-container{
-      position:relative;
-      width:100%;
-      height:100vh;
-    }
+.iframe-container{
+position:relative;
+width:100%;
+height:100vh;
+}
 
-    iframe{
-      width:100%;
-      height:100%;
-      border:none;
-      background:white;
-    }
+iframe{
+width:100%;
+height:100%;
+border:none;
+background:white;
+}
 
-    /* =========================
-       SPLASH SCREEN
-    ========================= */
+/* SPLASH */
 
-    .loader-screen{
+.loader-screen{
+position:absolute;
+inset:0;
+z-index:9999;
 
-      position:absolute;
-      inset:0;
+display:flex;
+justify-content:center;
+align-items:center;
 
-      z-index:9999;
+overflow:hidden;
 
-      display:flex;
-      justify-content:center;
-      align-items:center;
+background:
+radial-gradient(circle at top left,#12385d,#081120 60%);
 
-      overflow:hidden;
+transition:.7s;
+}
 
-      background:
-      radial-gradient(circle at top left,#12385d,#081120 60%);
+/* BACKGROUND GLOW */
 
-      transition:all .7s ease;
-    }
+.glow{
+position:absolute;
+border-radius:50%;
+filter:blur(90px);
+opacity:.45;
+}
 
-    /* BACKGROUND GLOW */
+.glow1{
+width:260px;
+height:260px;
+background:#2563eb;
 
-    .glow{
+top:-100px;
+left:-100px;
+}
 
-      position:absolute;
+.glow2{
+width:260px;
+height:260px;
+background:#22c55e;
 
-      border-radius:50%;
+bottom:-120px;
+right:-100px;
+}
 
-      filter:blur(90px);
+/* CARD */
 
-      opacity:.45;
-    }
+.loader-box{
 
-    .glow1{
+position:relative;
+z-index:10;
 
-      width:260px;
-      height:260px;
+width:90%;
+max-width:390px;
 
-      background:#2563eb;
+padding:42px 30px;
 
-      top:-100px;
-      left:-100px;
-    }
+border-radius:38px;
 
-    .glow2{
+text-align:center;
 
-      width:260px;
-      height:260px;
+color:white;
 
-      background:#22c55e;
+background:
+rgba(255,255,255,.08);
 
-      bottom:-120px;
-      right:-100px;
-    }
+backdrop-filter:blur(20px);
 
-    /* CARD */
+border:
+1px solid rgba(255,255,255,.08);
 
-    .loader-box{
+box-shadow:
+0 10px 50px rgba(0,0,0,.35);
+}
 
-      position:relative;
+/* LOGO */
 
-      z-index:10;
+.logo-wrapper{
 
-      width:90%;
-      max-width:390px;
+width:150px;
+height:150px;
 
-      padding:42px 30px;
+margin:auto;
 
-      border-radius:38px;
+border-radius:38px;
 
-      text-align:center;
+background:
+rgba(255,255,255,.08);
 
-      color:white;
+display:flex;
+justify-content:center;
+align-items:center;
 
-      background:
-      rgba(255,255,255,0.08);
+box-shadow:
+inset 0 0 25px rgba(255,255,255,.05);
 
-      backdrop-filter:blur(20px);
+animation:float 3s ease-in-out infinite;
+}
 
-      border:
-      1px solid rgba(255,255,255,0.08);
+.logo-circle{
 
-      box-shadow:
-      0 10px 50px rgba(0,0,0,.35);
-    }
+width:105px;
+height:105px;
 
-    /* LOGO BOX */
+border-radius:50%;
+background:white;
 
-    .logo-wrapper{
+display:flex;
+justify-content:center;
+align-items:center;
 
-      width:150px;
-      height:150px;
+padding:8px;
 
-      margin:auto;
+box-shadow:
+0 8px 25px rgba(0,0,0,.25);
+}
 
-      border-radius:38px;
+.logo-circle img{
 
-      background:
-      rgba(255,255,255,.08);
+width:100%;
+height:100%;
 
-      display:flex;
-      justify-content:center;
-      align-items:center;
+border-radius:50%;
+object-fit:cover;
+}
 
-      box-shadow:
-      inset 0 0 25px rgba(255,255,255,.05);
+/* TEXT */
 
-      animation:float 3s ease-in-out infinite;
-    }
+.app-title{
 
-    /* CIRCLE */
+margin-top:34px;
 
-    .logo-circle{
+font-size:1.2rem;
+font-weight:700;
 
-      width:108px;
-      height:108px;
+line-height:1.6;
+}
 
-      border-radius:50%;
+.subtitle{
 
-      background:white;
+margin-top:15px;
 
-      display:flex;
-      justify-content:center;
-      align-items:center;
+font-size:1rem;
 
-      padding:8px;
+color:#cbd5e1;
+}
 
-      box-shadow:
-      0 8px 25px rgba(0,0,0,.25);
-    }
+/* PROGRESS */
 
-    /* LOGO */
+.progress{
 
-    .logo-circle img{
+width:100%;
+height:14px;
 
-      width:100%;
-      height:100%;
+margin-top:35px;
 
-      object-fit:cover;
+background:
+rgba(255,255,255,.12);
 
-      border-radius:50%;
-    }
+border-radius:999px;
 
-    /* TITLE */
+overflow:hidden;
+}
 
-    .app-title{
+.progress-bar{
 
-      margin-top:34px;
+width:45%;
+height:100%;
 
-      font-size:1.3rem;
-      font-weight:700;
+border-radius:999px;
 
-      line-height:1.6;
-    }
+background:
+linear-gradient(
+90deg,
+#3b82f6,
+#4ade80
+);
 
-    .subtitle{
+animation:loading 2s infinite;
+}
 
-      margin-top:18px;
+.loading-text{
 
-      font-size:1rem;
+margin-top:22px;
 
-      color:#cbd5e1;
-    }
+font-size:1rem;
+color:#e2e8f0;
+}
 
-    /* PROGRESS BAR */
+/* ANIMATION */
 
-    .progress{
+@keyframes loading{
 
-      width:100%;
-      height:14px;
+0%{
+transform:translateX(-100%);
+}
 
-      margin-top:38px;
+100%{
+transform:translateX(260%);
+}
 
-      background:
-      rgba(255,255,255,.12);
+}
 
-      border-radius:999px;
+@keyframes float{
 
-      overflow:hidden;
-    }
+0%,100%{
+transform:translateY(0px);
+}
 
-    .progress-bar{
+50%{
+transform:translateY(-10px);
+}
 
-      width:45%;
-      height:100%;
+}
 
-      border-radius:999px;
+.fade-out{
+opacity:0;
+visibility:hidden;
+}
 
-      background:
-      linear-gradient(
-        90deg,
-        #3b82f6,
-        #4ade80
-      );
-
-      animation:loading 2s infinite;
-    }
-
-    /* TEXT */
-
-    .loading-text{
-
-      margin-top:22px;
-
-      font-size:1rem;
-
-      color:#e2e8f0;
-    }
-
-    /* ANIMATION */
-
-    @keyframes loading{
-
-      0%{
-        transform:translateX(-100%);
-      }
-
-      100%{
-        transform:translateX(260%);
-      }
-
-    }
-
-    @keyframes float{
-
-      0%,100%{
-        transform:translateY(0px);
-      }
-
-      50%{
-        transform:translateY(-10px);
-      }
-
-    }
-
-    .fade-out{
-
-      opacity:0;
-      visibility:hidden;
-    }
-
-  </style>
+</style>
 </head>
 
 <body>
 
-  <div class="iframe-container">
+<div class="iframe-container">
 
-    <!-- SPLASH SCREEN -->
-    <div class="loader-screen" id="loader">
+<div class="loader-screen" id="loader">
 
-      <!-- GLOW -->
-      <div class="glow glow1"></div>
-      <div class="glow glow2"></div>
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
 
-      <!-- CARD -->
-      <div class="loader-box">
+<div class="loader-box">
 
-        <!-- LOGO -->
-        <div class="logo-wrapper">
+<div class="logo-wrapper">
 
-          <div class="logo-circle">
+<div class="logo-circle">
 
-            <img
-              src="https://lh3.googleusercontent.com/d/1MIRHMi7eVL9qDRNW-SDs4NxR1WXx-ixk"
-              alt="Logo Inovasi Digital Puskesmas Kulon Progo">
+<img
+src="https://lh3.googleusercontent.com/d/1MIRHMi7eVL9qDRNW-SDs4NxR1WXx-ixk"
+alt="Logo Inovasi Digital Puskesmas">
 
-          </div>
+</div>
+</div>
 
-        </div>
+<div class="app-title">
+e Form Update Register<br>
+Puskesmas Kulon Progo
+</div>
 
-        <!-- TITLE -->
-        <div class="app-title">
-          e Form update Registrasi Puskesmas<br>
-          Kulon Progo
-        </div>
+<div class="subtitle">
+Tahun 2026
+</div>
 
-        <!-- DATE -->
-        <div class="subtitle">
-          22 Mei 2026
-        </div>
+<div class="progress">
+<div class="progress-bar"></div>
+</div>
 
-        <!-- PROGRESS -->
-        <div class="progress">
-          <div class="progress-bar"></div>
-        </div>
+<div class="loading-text">
+Memuat aplikasi...
+</div>
 
-        <!-- TEXT -->
-        <div class="loading-text">
-          Memuat aplikasi...
-        </div>
+</div>
+</div>
 
-      </div>
+<iframe
+src="https://script.google.com/a/~/macros/s/AKfycbzHBcxnXfNb_qiylJsOkU03f03Q2A9AfFdsjUUCPndV_r-8ltFZn7v5FCkyu93zU3Jv9g/exec"
+title="e Form Update Register Puskesmas Kulon Progo"
+allowfullscreen
+onload="hideLoader()">
+</iframe>
 
-    </div>
+</div>
 
-    <!-- WEB APP -->
-    <iframe
-      src="https://script.google.com/a/~/macros/s/AKfycbzHBcxnXfNb_qiylJsOkU03f03Q2A9AfFdsjUUCPndV_r-8ltFZn7v5FCkyu93zU3Jv9g/exec"
-      title="Update Register Puskesmas"
-      allowfullscreen
-      onload="hideLoader()">
-    </iframe>
+<script>
 
-  </div>
+function hideLoader(){
 
-  <script>
+const loader =
+document.getElementById('loader');
 
-    function hideLoader(){
+setTimeout(()=>{
 
-      const loader =
-      document.getElementById('loader');
+loader.classList.add('fade-out');
 
-      setTimeout(()=>{
+},1200);
 
-        loader.classList.add('fade-out');
+}
 
-      },1200);
-
-    }
-
-  </script>
-
-</body>
-</html>
-      z-index:10;
-
-      width:90%;
-      max-width:390px;
-
-      padding:42px 30px;
-
-      border-radius:38px;
-
-      text-align:center;
-
-      color:white;
-
-      background:
-      rgba(255,255,255,0.08);
-
-      backdrop-filter:blur(20px);
-
-      border:
-      1px solid rgba(255,255,255,0.08);
-
-      box-shadow:
-      0 10px 50px rgba(0,0,0,.35);
-    }
-
-    /* LOGO CONTAINER */
-
-    .logo-wrapper{
-
-      width:150px;
-      height:150px;
-
-      margin:auto;
-
-      border-radius:38px;
-
-      background:
-      rgba(255,255,255,.08);
-
-      display:flex;
-      justify-content:center;
-      align-items:center;
-
-      box-shadow:
-      inset 0 0 25px rgba(255,255,255,.05);
-
-      animation:float 3s ease-in-out infinite;
-    }
-
-    /* CIRCLE */
-
-    .logo-circle{
-
-      width:105px;
-      height:105px;
-
-      border-radius:50%;
-
-      background:white;
-
-      display:flex;
-      justify-content:center;
-      align-items:center;
-
-      padding:8px;
-
-      box-shadow:
-      0 8px 25px rgba(0,0,0,.25);
-    }
-
-    /* LOGO */
-
-    .logo-circle img{
-
-      width:100%;
-      height:100%;
-
-      object-fit:cover;
-
-      border-radius:50%;
-    }
-
-    /* TITLE */
-
-    .app-title{
-
-      margin-top:34px;
-
-      font-size:1.25rem;
-      font-weight:700;
-
-      line-height:1.6;
-    }
-
-    .subtitle{
-
-      margin-top:18px;
-
-      font-size:1rem;
-
-      color:#cbd5e1;
-    }
-
-    /* PROGRESS BAR */
-
-    .progress{
-
-      width:100%;
-      height:14px;
-
-      margin-top:38px;
-
-      background:
-      rgba(255,255,255,.12);
-
-      border-radius:999px;
-
-      overflow:hidden;
-    }
-
-    .progress-bar{
-
-      width:45%;
-      height:100%;
-
-      border-radius:999px;
-
-      background:
-      linear-gradient(
-        90deg,
-        #3b82f6,
-        #4ade80
-      );
-
-      animation:loading 2s infinite;
-    }
-
-    /* TEXT */
-
-    .loading-text{
-
-      margin-top:22px;
-
-      font-size:1rem;
-
-      color:#e2e8f0;
-    }
-
-    /* ANIMATION */
-
-    @keyframes loading{
-
-      0%{
-        transform:translateX(-100%);
-      }
-
-      100%{
-        transform:translateX(260%);
-      }
-
-    }
-
-    @keyframes float{
-
-      0%,100%{
-        transform:translateY(0px);
-      }
-
-      50%{
-        transform:translateY(-10px);
-      }
-
-    }
-
-    .fade-out{
-
-      opacity:0;
-      visibility:hidden;
-    }
-
-  </style>
-</head>
-
-<body>
-
-  <div class="iframe-container">
-
-    <!-- SPLASH SCREEN -->
-    <div class="loader-screen" id="loader">
-
-      <!-- BACKGROUND GLOW -->
-      <div class="glow glow1"></div>
-      <div class="glow glow2"></div>
-
-      <!-- CARD -->
-      <div class="loader-box">
-
-        <!-- LOGO -->
-        <div class="logo-wrapper">
-
-          <div class="logo-circle">
-
-            <img
-              src="https://lh3.googleusercontent.com/d/1dcDu5DSWJl2Gk3cl4sgklACvxGnUyVju"
-              alt="Logo APKESMI">
-
-          </div>
-
-        </div>
-
-        <!-- TITLE -->
-        <div class="app-title">
-          e Form Update Register Puskesmas<br>
-          Kulon Progo
-        </div>
-
-        <!-- DATE -->
-        <div class="subtitle">
-          22 Mei 2026
-        </div>
-
-        <!-- PROGRESS -->
-        <div class="progress">
-          <div class="progress-bar"></div>
-        </div>
-
-        <!-- TEXT -->
-        <div class="loading-text">
-          Memuat aplikasi...
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- WEB APP -->
-    <iframe
-      src="https://script.google.com/a/~/macros/s/AKfycbzHBcxnXfNb_qiylJsOkU03f03Q2A9AfFdsjUUCPndV_r-8ltFZn7v5FCkyu93zU3Jv9g/exec"
-      title="e Form Update Register Puskesmas Kulon Progo"
-      allowfullscreen
-      onload="hideLoader()">
-    </iframe>
-
-  </div>
-
-  <script>
-
-    function hideLoader(){
-
-      const loader =
-      document.getElementById('loader');
-
-      setTimeout(()=>{
-
-        loader.classList.add('fade-out');
-
-      },1200);
-
-    }
-
-  </script>
+</script>
 
 </body>
 </html>
