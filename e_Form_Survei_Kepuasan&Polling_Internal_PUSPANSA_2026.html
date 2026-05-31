@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+e Form Survei Kepuasan & Polling Internal PUSPANSA 2026
+</title>
+
+<!-- FAVICON -->
+<link rel="icon"
+href="https://lh3.googleusercontent.com/d/1MIRHMi7eVL9qDRNW-SDs4NxR1WXx-ixk"
+type="image/png">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html,body{
+width:100%;
+height:100%;
+overflow:hidden;
+font-family:'Segoe UI',sans-serif;
+background:#081120;
+}
+
+.iframe-container{
+position:relative;
+width:100%;
+height:100vh;
+}
+
+iframe{
+width:100%;
+height:100%;
+border:none;
+background:white;
+}
+
+/* SPLASH SCREEN */
+
+.loader-screen{
+position:absolute;
+inset:0;
+z-index:9999;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+overflow:hidden;
+
+background:
+radial-gradient(circle at top left,#12385d,#081120 60%);
+
+transition:.7s;
+}
+
+/* GLOW EFFECT */
+
+.glow{
+position:absolute;
+border-radius:50%;
+filter:blur(90px);
+opacity:.45;
+}
+
+.glow1{
+width:260px;
+height:260px;
+background:#2563eb;
+
+top:-100px;
+left:-100px;
+}
+
+.glow2{
+width:260px;
+height:260px;
+background:#22c55e;
+
+bottom:-120px;
+right:-100px;
+}
+
+/* CARD */
+
+.loader-box{
+
+position:relative;
+z-index:10;
+
+width:90%;
+max-width:420px;
+
+padding:42px 30px;
+
+border-radius:38px;
+
+text-align:center;
+
+color:white;
+
+background:
+rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border:
+1px solid rgba(255,255,255,.08);
+
+box-shadow:
+0 10px 50px rgba(0,0,0,.35);
+}
+
+/* LOGO */
+
+.logo-wrapper{
+
+width:150px;
+height:150px;
+
+margin:auto;
+
+border-radius:38px;
+
+background:
+rgba(255,255,255,.08);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+box-shadow:
+inset 0 0 25px rgba(255,255,255,.05);
+
+animation:float 3s ease-in-out infinite;
+}
+
+.logo-circle{
+
+width:105px;
+height:105px;
+
+border-radius:50%;
+
+background:white;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+padding:8px;
+
+box-shadow:
+0 8px 25px rgba(0,0,0,.25);
+}
+
+.logo-circle img{
+
+width:100%;
+height:100%;
+
+border-radius:50%;
+object-fit:contain;
+}
+
+/* TEXT */
+
+.app-title{
+
+margin-top:34px;
+
+font-size:1.2rem;
+font-weight:700;
+
+line-height:1.6;
+}
+
+.subtitle{
+
+margin-top:15px;
+
+font-size:1rem;
+
+color:#cbd5e1;
+
+line-height:1.6;
+}
+
+.progress{
+
+width:100%;
+height:14px;
+
+margin-top:35px;
+
+background:
+rgba(255,255,255,.12);
+
+border-radius:999px;
+
+overflow:hidden;
+}
+
+.progress-bar{
+
+width:45%;
+height:100%;
+
+border-radius:999px;
+
+background:
+linear-gradient(
+90deg,
+#3b82f6,
+#4ade80
+);
+
+animation:loading 2s infinite;
+}
+
+.loading-text{
+
+margin-top:22px;
+
+font-size:1rem;
+
+color:#e2e8f0;
+}
+
+/* ANIMATION */
+
+@keyframes loading{
+
+0%{
+transform:translateX(-100%);
+}
+
+100%{
+transform:translateX(260%);
+}
+
+}
+
+@keyframes float{
+
+0%,100%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+}
+
+.fade-out{
+opacity:0;
+visibility:hidden;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="iframe-container">
+
+<div class="loader-screen" id="loader">
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
+<div class="loader-box">
+
+<div class="logo-wrapper">
+
+<div class="logo-circle">
+
+<img
+src="https://lh3.googleusercontent.com/d/1MIRHMi7eVL9qDRNW-SDs4NxR1WXx-ixk"
+alt="Logo Inovasi Digital Puskesmas">
+
+</div>
+
+</div>
+
+<div class="app-title">
+e Form Survei Kepuasan<br>
+& Polling Internal PUSPANSA
+</div>
+
+<div class="subtitle">
+Karena Setiap Pendapat Memiliki Arti
+</div>
+
+<div class="progress">
+<div class="progress-bar"></div>
+</div>
+
+<div class="loading-text">
+Menghubungkan aspirasi, membangun perubahan...
+</div>
+
+</div>
+
+</div>
+
+<iframe
+src="https://script.google.com/a/~/macros/s/AKfycbwn5mfFnROcThXISbVqYiXtgfJNdpx87gE5tXVjHg64DPqTK1iaKxvUrgTGNlLBD36e/exec"
+title="e Form Survei Kepuasan & Polling Internal PUSPANSA 2026"
+allowfullscreen
+onload="hideLoader()">
+</iframe>
+
+</div>
+
+<script>
+
+function hideLoader(){
+
+const loader=document.getElementById("loader");
+
+setTimeout(()=>{
+
+loader.classList.add("fade-out");
+
+},1200);
+
+}
+
+</script>
+
+</body>
+</html>
