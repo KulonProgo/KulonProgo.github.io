@@ -24,7 +24,8 @@ box-sizing:border-box;
 html,body{
 width:100%;
 height:100%;
-overflow:hidden;
+overflow-x:hidden;
+overflow-y:auto;
 font-family:'Segoe UI',sans-serif;
 background:#06142d;
 }
@@ -45,7 +46,7 @@ background:#fff;
 /* SPLASH SCREEN */
 
 .loader-screen{
-position:absolute;
+position:fixed;
 inset:0;
 z-index:9999;
 
@@ -121,7 +122,7 @@ z-index:2;
 width:92%;
 max-width:460px;
 
-padding:45px 30px;
+padding:40px 30px;
 
 border-radius:40px;
 
@@ -145,8 +146,8 @@ color:#fff;
 
 .logo-wrapper{
 
-width:150px;
-height:150px;
+width:130px;
+height:130px;
 
 margin:auto;
 
@@ -159,8 +160,8 @@ animation:float 3s ease-in-out infinite;
 
 .logo-circle{
 
-width:110px;
-height:110px;
+width:95px;
+height:95px;
 
 background:#fff;
 
@@ -190,9 +191,9 @@ border-radius:50%;
 
 .app-title{
 
-margin-top:25px;
+margin-top:20px;
 
-font-size:1.6rem;
+font-size:1.5rem;
 font-weight:700;
 
 letter-spacing:.5px;
@@ -213,7 +214,7 @@ color:#e2e8f0;
 
 margin-top:12px;
 
-font-size:.95rem;
+font-size:.9rem;
 
 font-weight:600;
 
@@ -229,9 +230,9 @@ text-transform:uppercase;
 .progress{
 
 width:100%;
-height:14px;
+height:12px;
 
-margin-top:32px;
+margin-top:28px;
 
 background:
 rgba(255,255,255,.15);
@@ -263,16 +264,16 @@ animation:loading 2s infinite;
 
 margin-top:18px;
 
-font-size:1rem;
+font-size:.95rem;
 
 color:#f8fafc;
 }
 
 .quote{
 
-margin-top:20px;
+margin-top:18px;
 
-font-size:.92rem;
+font-size:.9rem;
 
 line-height:1.7;
 
@@ -284,6 +285,66 @@ font-style:italic;
 .fade-out{
 opacity:0;
 visibility:hidden;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width:600px){
+
+.loader-box{
+
+max-width:340px;
+
+padding:28px 20px;
+
+border-radius:28px;
+}
+
+.logo-wrapper{
+
+width:100px;
+height:100px;
+}
+
+.logo-circle{
+
+width:75px;
+height:75px;
+}
+
+.app-title{
+
+font-size:1.2rem;
+}
+
+.subtitle{
+
+font-size:.88rem;
+line-height:1.5;
+}
+
+.tagline{
+
+font-size:.75rem;
+}
+
+.loading-text{
+
+font-size:.82rem;
+}
+
+.quote{
+
+font-size:.75rem;
+line-height:1.5;
+}
+
+.progress{
+
+height:10px;
+margin-top:20px;
+}
+
 }
 
 /* ANIMATION */
