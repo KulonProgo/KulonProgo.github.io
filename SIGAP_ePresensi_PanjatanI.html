@@ -1,0 +1,418 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+
+<title>
+SIGAP | Sistem Informasi Gawai Presensi Pegawai Puskesmas Panjatan I
+</title>
+
+<link rel="icon"
+href="https://lh3.googleusercontent.com/d/1MIRHMi7eVL9qDRNW-SDs4NxR1WXx-ixk">
+
+<link rel="preconnect" href="https://script.google.com">
+<link rel="dns-prefetch" href="//script.google.com">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html,body{
+width:100%;
+height:100%;
+overflow:hidden;
+font-family:'Segoe UI',sans-serif;
+background:#fff;
+}
+
+body{
+position:fixed;
+inset:0;
+}
+
+.iframe-container{
+position:fixed;
+inset:0;
+width:100vw;
+height:100dvh;
+overflow:hidden;
+background:#fff;
+}
+
+iframe{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+border:none;
+display:block;
+background:#fff;
+}
+
+/* SPLASH */
+
+.loader-screen{
+position:fixed;
+inset:0;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+linear-gradient(
+135deg,
+#0b1f3a,
+#0f4c81,
+#0f766e
+);
+
+overflow:hidden;
+
+z-index:9999;
+
+transition:
+opacity .6s ease,
+visibility .6s ease;
+}
+
+/* GLOW EFFECT */
+
+.glow{
+position:absolute;
+border-radius:50%;
+filter:blur(100px);
+opacity:.35;
+}
+
+.glow1{
+width:300px;
+height:300px;
+background:#38bdf8;
+top:-120px;
+left:-120px;
+}
+
+.glow2{
+width:300px;
+height:300px;
+background:#10b981;
+right:-120px;
+bottom:-120px;
+}
+
+/* CARD */
+
+.loader-box{
+
+position:relative;
+z-index:10;
+
+width:92%;
+max-width:430px;
+
+padding:30px 24px;
+
+text-align:center;
+
+border-radius:32px;
+
+background:
+rgba(255,255,255,.12);
+
+backdrop-filter:blur(20px);
+
+border:
+1px solid rgba(255,255,255,.15);
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.25);
+
+color:white;
+}
+
+/* LOGO */
+
+.logo-circle{
+
+width:95px;
+height:95px;
+
+margin:auto;
+
+padding:8px;
+
+background:white;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+box-shadow:
+0 8px 25px rgba(0,0,0,.25);
+
+animation:float 3s ease infinite;
+}
+
+.logo-circle img{
+
+width:100%;
+height:100%;
+
+object-fit:contain;
+
+border-radius:50%;
+}
+
+/* TITLE */
+
+.app-title{
+
+margin-top:20px;
+
+font-size:1.55rem;
+font-weight:700;
+
+line-height:1.4;
+}
+
+.subtitle{
+
+margin-top:12px;
+
+font-size:1rem;
+
+line-height:1.6;
+
+color:#dbeafe;
+}
+
+.tagline{
+
+margin-top:12px;
+
+font-size:.85rem;
+
+font-weight:600;
+
+letter-spacing:1px;
+
+color:#7dd3fc;
+
+text-transform:uppercase;
+}
+
+/* PROGRESS */
+
+.progress{
+
+margin-top:24px;
+
+width:100%;
+height:10px;
+
+border-radius:999px;
+
+overflow:hidden;
+
+background:
+rgba(255,255,255,.15);
+}
+
+.progress-bar{
+
+width:100%;
+height:100%;
+
+background:
+linear-gradient(
+90deg,
+#38bdf8,
+#10b981,
+#38bdf8
+);
+
+background-size:200% 100%;
+
+animation:
+shimmer 1.5s linear infinite;
+}
+
+.loading-text{
+
+margin-top:15px;
+
+font-size:.95rem;
+
+color:#e2e8f0;
+}
+
+.quote{
+
+margin-top:18px;
+
+font-size:.85rem;
+
+line-height:1.6;
+
+color:#cbd5e1;
+
+font-style:italic;
+}
+
+.fade-out{
+opacity:0;
+visibility:hidden;
+pointer-events:none;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+.loader-box{
+max-width:340px;
+padding:24px 18px;
+}
+
+.logo-circle{
+width:75px;
+height:75px;
+}
+
+.app-title{
+font-size:1.2rem;
+}
+
+.subtitle{
+font-size:.9rem;
+}
+
+.tagline{
+font-size:.72rem;
+}
+
+.loading-text{
+font-size:.82rem;
+}
+
+.quote{
+font-size:.75rem;
+}
+
+}
+
+/* ANIMATION */
+
+@keyframes shimmer{
+
+0%{
+background-position:0% 50%;
+}
+
+100%{
+background-position:200% 50%;
+}
+
+}
+
+@keyframes float{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="iframe-container">
+
+<div class="loader-screen" id="loader">
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
+<div class="loader-box">
+
+<div class="logo-circle">
+<img
+src="https://lh3.googleusercontent.com/d/1MIRHMi7eVL9qDRNW-SDs4NxR1WXx-ixk"
+alt="SIGAP">
+</div>
+
+<div class="app-title">
+SIGAP
+</div>
+
+<div class="subtitle">
+Sistem Informasi Gawai<br>
+Presensi Pegawai<br>
+Puskesmas Panjatan I
+</div>
+
+<div class="tagline">
+CEPAT • TEPAT • AKUNTABEL
+</div>
+
+<div class="progress">
+<div class="progress-bar"></div>
+</div>
+
+<div class="loading-text">
+Menyiapkan sistem presensi digital...
+</div>
+
+<div class="quote">
+"Membangun budaya kerja disiplin, profesional, dan berintegritas melalui transformasi digital."
+</div>
+
+</div>
+
+</div>
+
+<iframe
+src="https://script.google.com/a/~/macros/s/AKfycbxMslHJzbFSpyqL9CQVP5_3yEI4iAuxlVwoLDhrIQlJYlAnw3BYTnApwQSLMLcHjhDy/exec"
+title="SIGAP"
+loading="eager"
+allowfullscreen
+onload="hideLoader()">
+</iframe>
+
+</div>
+
+<script>
+
+function hideLoader(){
+
+setTimeout(function(){
+
+document
+.getElementById('loader')
+.classList.add('fade-out');
+
+},500);
+
+}
+
+</script>
+
+</body>
+</html>
+```
