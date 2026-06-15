@@ -1,14 +1,11 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport"
-content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+content="width=device-width,initial-scale=1.0,viewport-fit=cover,user-scalable=no">
 
-<title>
-SIGAP | Sistem Informasi Gawai Presensi Pegawai Puskesmas Panjatan I
-</title>
+<title>SIGAP | Sistem Informasi Gawai Absensi Presensi Pegawai</title>
 
 <link rel="icon"
 href="https://lh3.googleusercontent.com/d/1MIRHMi7eVL9qDRNW-SDs4NxR1WXx-ixk">
@@ -29,7 +26,7 @@ width:100%;
 height:100%;
 overflow:hidden;
 font-family:'Segoe UI',sans-serif;
-background:#fff;
+background:#ffffff;
 }
 
 body{
@@ -42,8 +39,8 @@ position:fixed;
 inset:0;
 width:100vw;
 height:100dvh;
+background:#ffffff;
 overflow:hidden;
-background:#fff;
 }
 
 iframe{
@@ -53,15 +50,14 @@ width:100%;
 height:100%;
 border:none;
 display:block;
-background:#fff;
+background:#ffffff;
 }
 
-/* SPLASH */
+/* SPLASH SCREEN */
 
 .loader-screen{
 position:fixed;
 inset:0;
-
 display:flex;
 justify-content:center;
 align-items:center;
@@ -69,81 +65,54 @@ align-items:center;
 background:
 linear-gradient(
 135deg,
-#0b1f3a,
-#0f4c81,
-#0f766e
+#0b1220,
+#172554,
+#2563eb
 );
-
-overflow:hidden;
 
 z-index:9999;
 
 transition:
-opacity .6s ease,
-visibility .6s ease;
+opacity .4s ease,
+visibility .4s ease;
 }
 
-/* GLOW EFFECT */
+.loader-card{
 
-.glow{
-position:absolute;
-border-radius:50%;
-filter:blur(100px);
-opacity:.35;
-}
+width:90%;
+max-width:340px;
 
-.glow1{
-width:300px;
-height:300px;
-background:#38bdf8;
-top:-120px;
-left:-120px;
-}
-
-.glow2{
-width:300px;
-height:300px;
-background:#10b981;
-right:-120px;
-bottom:-120px;
-}
-
-/* CARD */
-
-.loader-box{
-
-position:relative;
-z-index:10;
-
-width:92%;
-max-width:430px;
-
-padding:30px 24px;
+padding:32px 24px;
 
 text-align:center;
 
-border-radius:32px;
+border-radius:24px;
 
 background:
-rgba(255,255,255,.12);
+rgba(255,255,255,.08);
 
-backdrop-filter:blur(20px);
+backdrop-filter:blur(12px);
 
 border:
-1px solid rgba(255,255,255,.15);
+1px solid rgba(255,255,255,.10);
 
 box-shadow:
-0 20px 60px rgba(0,0,0,.25);
+0 15px 40px rgba(0,0,0,.25);
+}
 
-color:white;
+/* GPS */
+
+.gps-icon{
+font-size:2.4rem;
+margin-bottom:12px;
 }
 
 /* LOGO */
 
 .logo-circle{
 
-width:95px;
-height:95px;
+width:72px;
+height:72px;
 
 margin:auto;
 
@@ -156,11 +125,6 @@ border-radius:50%;
 display:flex;
 justify-content:center;
 align-items:center;
-
-box-shadow:
-0 8px 25px rgba(0,0,0,.25);
-
-animation:float 3s ease infinite;
 }
 
 .logo-circle img{
@@ -173,42 +137,42 @@ object-fit:contain;
 border-radius:50%;
 }
 
-/* TITLE */
+/* TEXT */
 
 .app-title{
 
-margin-top:20px;
+margin-top:14px;
 
-font-size:1.55rem;
+font-size:1.8rem;
 font-weight:700;
 
-line-height:1.4;
+color:white;
 }
 
-.subtitle{
+.app-subtitle{
 
-margin-top:12px;
+margin-top:10px;
 
-font-size:1rem;
+font-size:.95rem;
 
 line-height:1.6;
 
 color:#dbeafe;
 }
 
-.tagline{
+.app-location{
 
-margin-top:12px;
+margin-top:8px;
 
-font-size:.85rem;
+font-size:.8rem;
 
 font-weight:600;
 
 letter-spacing:1px;
 
-color:#7dd3fc;
-
 text-transform:uppercase;
+
+color:#7dd3fc;
 }
 
 /* PROGRESS */
@@ -217,10 +181,9 @@ text-transform:uppercase;
 
 margin-top:24px;
 
-width:100%;
-height:10px;
+height:6px;
 
-border-radius:999px;
+border-radius:99px;
 
 overflow:hidden;
 
@@ -237,36 +200,22 @@ background:
 linear-gradient(
 90deg,
 #38bdf8,
-#10b981,
+#60a5fa,
 #38bdf8
 );
 
 background-size:200% 100%;
 
-animation:
-shimmer 1.5s linear infinite;
+animation:move 1.2s linear infinite;
 }
 
 .loading-text{
 
-margin-top:15px;
-
-font-size:.95rem;
-
-color:#e2e8f0;
-}
-
-.quote{
-
-margin-top:18px;
+margin-top:14px;
 
 font-size:.85rem;
 
-line-height:1.6;
-
 color:#cbd5e1;
-
-font-style:italic;
 }
 
 .fade-out{
@@ -275,45 +224,7 @@ visibility:hidden;
 pointer-events:none;
 }
 
-/* MOBILE */
-
-@media(max-width:600px){
-
-.loader-box{
-max-width:340px;
-padding:24px 18px;
-}
-
-.logo-circle{
-width:75px;
-height:75px;
-}
-
-.app-title{
-font-size:1.2rem;
-}
-
-.subtitle{
-font-size:.9rem;
-}
-
-.tagline{
-font-size:.72rem;
-}
-
-.loading-text{
-font-size:.82rem;
-}
-
-.quote{
-font-size:.75rem;
-}
-
-}
-
-/* ANIMATION */
-
-@keyframes shimmer{
+@keyframes move{
 
 0%{
 background-position:0% 50%;
@@ -325,14 +236,26 @@ background-position:200% 50%;
 
 }
 
-@keyframes float{
+/* MOBILE */
 
-0%,100%{
-transform:translateY(0);
+@media(max-width:600px){
+
+.loader-card{
+max-width:300px;
+padding:24px 18px;
 }
 
-50%{
-transform:translateY(-8px);
+.logo-circle{
+width:60px;
+height:60px;
+}
+
+.app-title{
+font-size:1.5rem;
+}
+
+.app-subtitle{
+font-size:.85rem;
 }
 
 }
@@ -344,31 +267,33 @@ transform:translateY(-8px);
 
 <div class="iframe-container">
 
+<!-- LOADING SCREEN -->
+
 <div class="loader-screen" id="loader">
 
-<div class="glow glow1"></div>
-<div class="glow glow2"></div>
+<div class="loader-card">
 
-<div class="loader-box">
+<div class="gps-icon">📍</div>
 
 <div class="logo-circle">
+
 <img
 src="https://lh3.googleusercontent.com/d/1MIRHMi7eVL9qDRNW-SDs4NxR1WXx-ixk"
 alt="SIGAP">
+
 </div>
 
 <div class="app-title">
 SIGAP
 </div>
 
-<div class="subtitle">
+<div class="app-subtitle">
 Sistem Informasi Gawai<br>
-Presensi Pegawai<br>
-Puskesmas Panjatan I
+Absensi Presensi Pegawai
 </div>
 
-<div class="tagline">
-CEPAT • TEPAT • AKUNTABEL
+<div class="app-location">
+Puskesmas Panjatan I
 </div>
 
 <div class="progress">
@@ -376,21 +301,22 @@ CEPAT • TEPAT • AKUNTABEL
 </div>
 
 <div class="loading-text">
-Menyiapkan sistem presensi digital...
-</div>
-
-<div class="quote">
-"Membangun budaya kerja disiplin, profesional, dan berintegritas melalui transformasi digital."
+Menghubungkan sistem presensi berbasis lokasi...
 </div>
 
 </div>
 
 </div>
+
+<!-- WEB APP -->
 
 <iframe
+id="appFrame"
 src="https://script.google.com/a/~/macros/s/AKfycbxMslHJzbFSpyqL9CQVP5_3yEI4iAuxlVwoLDhrIQlJYlAnw3BYTnApwQSLMLcHjhDy/exec"
-title="SIGAP"
+allow="geolocation *"
+sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-modals allow-downloads"
 loading="eager"
+referrerpolicy="no-referrer"
 allowfullscreen
 onload="hideLoader()">
 </iframe>
@@ -401,13 +327,13 @@ onload="hideLoader()">
 
 function hideLoader(){
 
-setTimeout(function(){
+setTimeout(()=>{
 
 document
 .getElementById('loader')
 .classList.add('fade-out');
 
-},500);
+},300);
 
 }
 
@@ -415,4 +341,3 @@ document
 
 </body>
 </html>
-```
