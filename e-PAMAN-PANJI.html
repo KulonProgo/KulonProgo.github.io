@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0,viewport-fit=cover,user-scalable=no">
+
+<title>
+e-PAMAN PANJI | Sistem PerencanaAn & MANajemen Puskesmas PANJatan I
+</title>
+
+<link rel="icon"
+href="https://lh3.googleusercontent.com/d/1MIRHMi7eVL9qDRNW-SDs4NxR1WXx-ixk">
+
+<link rel="preconnect" href="https://script.google.com">
+<link rel="dns-prefetch" href="//script.google.com">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html,body{
+width:100%;
+height:100%;
+overflow:hidden;
+font-family:'Segoe UI',sans-serif;
+background:#ffffff;
+}
+
+body{
+position:fixed;
+inset:0;
+}
+
+.iframe-container{
+position:fixed;
+inset:0;
+width:100vw;
+height:100dvh;
+background:#ffffff;
+overflow:hidden;
+}
+
+iframe{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+border:none;
+display:block;
+background:#ffffff;
+}
+
+/* SPLASH SCREEN */
+
+.loader-screen{
+
+position:fixed;
+inset:0;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+linear-gradient(
+135deg,
+#052e16,
+#166534,
+#0f766e
+);
+
+z-index:9999;
+
+transition:
+opacity .4s ease,
+visibility .4s ease;
+}
+
+/* CARD */
+
+.loader-card{
+
+width:90%;
+max-width:380px;
+
+padding:32px 24px;
+
+text-align:center;
+
+border-radius:24px;
+
+background:
+rgba(255,255,255,.08);
+
+backdrop-filter:blur(16px);
+
+border:
+1px solid rgba(255,255,255,.12);
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.25);
+}
+
+/* ICON */
+
+.main-icon{
+
+font-size:2.8rem;
+margin-bottom:12px;
+}
+
+/* LOGO */
+
+.logo-circle{
+
+width:80px;
+height:80px;
+
+margin:auto;
+
+padding:8px;
+
+background:#ffffff;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.logo-circle img{
+
+width:100%;
+height:100%;
+
+object-fit:contain;
+
+border-radius:50%;
+}
+
+/* TEXT */
+
+.app-title{
+
+margin-top:16px;
+
+font-size:1.8rem;
+font-weight:700;
+
+color:#ffffff;
+}
+
+.app-subtitle{
+
+margin-top:10px;
+
+font-size:.95rem;
+
+line-height:1.7;
+
+color:#dcfce7;
+}
+
+.app-location{
+
+margin-top:10px;
+
+font-size:.8rem;
+
+font-weight:600;
+
+letter-spacing:1px;
+
+text-transform:uppercase;
+
+color:#86efac;
+}
+
+.tagline{
+
+margin-top:12px;
+
+font-size:.8rem;
+
+font-style:italic;
+
+color:#d1fae5;
+}
+
+/* PROGRESS */
+
+.progress{
+
+margin-top:24px;
+
+height:6px;
+
+border-radius:99px;
+
+overflow:hidden;
+
+background:
+rgba(255,255,255,.15);
+}
+
+.progress-bar{
+
+width:100%;
+height:100%;
+
+background:
+linear-gradient(
+90deg,
+#22c55e,
+#4ade80,
+#22c55e
+);
+
+background-size:200% 100%;
+
+animation:move 1.2s linear infinite;
+}
+
+.loading-text{
+
+margin-top:14px;
+
+font-size:.85rem;
+
+color:#ecfdf5;
+}
+
+.fade-out{
+
+opacity:0;
+visibility:hidden;
+pointer-events:none;
+}
+
+@keyframes move{
+
+0%{
+background-position:0% 50%;
+}
+
+100%{
+background-position:200% 50%;
+}
+
+}
+
+@media(max-width:600px){
+
+.loader-card{
+max-width:320px;
+padding:24px 18px;
+}
+
+.logo-circle{
+width:70px;
+height:70px;
+}
+
+.app-title{
+font-size:1.5rem;
+}
+
+.app-subtitle{
+font-size:.85rem;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="iframe-container">
+
+<div class="loader-screen" id="loader">
+
+<div class="loader-card">
+
+<div class="main-icon">📊</div>
+
+<div class="logo-circle">
+
+<img
+src="https://lh3.googleusercontent.com/d/1MIRHMi7eVL9qDRNW-SDs4NxR1WXx-ixk"
+alt="e-PAMAN PANJI">
+
+</div>
+
+<div class="app-title">
+e-PAMAN PANJI
+</div>
+
+<div class="app-subtitle">
+Sistem PerencanaAn & MANajemen<br>
+Puskesmas PANJatan I
+</div>
+
+<div class="app-location">
+PUSKESMAS PANJATAN I
+</div>
+
+<div class="tagline">
+Perencanaan Terintegrasi • Monitoring • Evaluasi • Kinerja
+</div>
+
+<div class="progress">
+<div class="progress-bar"></div>
+</div>
+
+<div class="loading-text">
+Menyiapkan sistem perencanaan dan manajemen...
+</div>
+
+</div>
+
+</div>
+
+<iframe
+id="appFrame"
+src="https://script.google.com/a/~/macros/s/AKfycbwcDQ1HOB4hhZSFECOUVVcBtm4ShpQDL835EtN-Vmnyu_ybXusOjURQGk96LU0551Ingg/exec"
+allow="geolocation *; camera *; microphone *"
+sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-modals allow-downloads"
+loading="eager"
+referrerpolicy="no-referrer"
+allowfullscreen
+onload="hideLoader()">
+</iframe>
+
+</div>
+
+<script>
+
+function hideLoader(){
+
+setTimeout(() => {
+
+document
+.getElementById('loader')
+.classList.add('fade-out');
+
+}, 300);
+
+}
+
+</script>
+
+</body>
+</html>
