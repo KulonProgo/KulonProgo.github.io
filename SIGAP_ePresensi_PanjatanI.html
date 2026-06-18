@@ -11,6 +11,16 @@ content="width=device-width,initial-scale=1.0,viewport-fit=cover,user-scalable=n
 SIGAP | Sistem Informasi Gawai Absensi Presensi Pegawai
 </title>
 
+<meta name="theme-color" content="#2563eb">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="apple-mobile-web-app-title" content="SIGAP">
+
 <link rel="preconnect" href="https://script.google.com">
 <link rel="dns-prefetch" href="//script.google.com">
 
@@ -27,8 +37,8 @@ body{
 width:100%;
 height:100%;
 overflow:hidden;
-font-family:'Segoe UI',sans-serif;
 background:#ffffff;
+font-family:'Segoe UI',sans-serif;
 }
 
 body{
@@ -41,8 +51,8 @@ position:fixed;
 inset:0;
 width:100vw;
 height:100dvh;
-overflow:hidden;
 background:#ffffff;
+overflow:hidden;
 }
 
 iframe{
@@ -56,9 +66,7 @@ display:block;
 background:#ffffff;
 }
 
-/* =========================
-   SPLASH SCREEN
-========================= */
+/* SPLASH SCREEN */
 
 .loader-screen{
 
@@ -89,13 +97,13 @@ visibility .4s ease;
 .loader-card{
 
 width:90%;
-max-width:380px;
+max-width:340px;
 
-padding:36px 28px;
-
-border-radius:28px;
+padding:34px 24px;
 
 text-align:center;
+
+border-radius:24px;
 
 background:
 rgba(255,255,255,.08);
@@ -103,70 +111,68 @@ rgba(255,255,255,.08);
 backdrop-filter:blur(16px);
 
 border:
-1px solid rgba(255,255,255,.08);
+1px solid rgba(255,255,255,.10);
 
 box-shadow:
-0 15px 50px rgba(0,0,0,.35);
+0 15px 40px rgba(0,0,0,.25);
 }
 
-/* =========================
-   RADAR GEOFENCE
-========================= */
+/* DIGITAL LOADER */
 
-.radar{
+.digital-loader{
 
 position:relative;
 
-width:160px;
-height:160px;
+width:120px;
+height:120px;
 
 margin:auto;
 margin-bottom:20px;
 }
 
-.radar-circle{
+.ring{
 
 position:absolute;
 
 top:50%;
 left:50%;
 
-transform:
-translate(-50%,-50%);
+transform:translate(-50%,-50%);
 
 border-radius:50%;
 
-border:
-2px solid rgba(56,189,248,.35);
+border:2px solid rgba(59,130,246,.35);
 }
 
-.c1{
-width:60px;
-height:60px;
+.ring1{
+width:50px;
+height:50px;
+animation:pulse 2s infinite;
 }
 
-.c2{
-width:105px;
-height:105px;
+.ring2{
+width:80px;
+height:80px;
+animation:pulse 2s infinite .5s;
 }
 
-.c3{
-width:150px;
-height:150px;
+.ring3{
+width:110px;
+height:110px;
+animation:pulse 2s infinite 1s;
 }
 
-.radar-center{
+.core{
 
 position:absolute;
 
 top:50%;
 left:50%;
 
-transform:
-translate(-50%,-50%);
+transform:translate(-50%,-50%);
 
-width:60px;
-height:60px;
+width:58px;
+height:58px;
 
 border-radius:50%;
 
@@ -178,113 +184,80 @@ linear-gradient(
 );
 
 display:flex;
-align-items:center;
 justify-content:center;
-
-font-size:1.8rem;
-font-weight:bold;
+align-items:center;
 
 color:white;
 
+font-size:24px;
+font-weight:700;
+
 box-shadow:
-0 0 30px rgba(56,189,248,.8);
+0 0 25px rgba(59,130,246,.8);
 }
 
-.radar-line{
+@keyframes pulse{
 
-position:absolute;
-
-top:50%;
-left:50%;
-
-width:75px;
-height:3px;
-
-background:
-linear-gradient(
-90deg,
-#7dd3fc,
-transparent
-);
-
-transform-origin:left center;
-
-animation:
-scan 3s linear infinite;
+0%{
+opacity:1;
 }
 
-@keyframes scan{
+100%{
 
-from{
-transform:rotate(0deg);
-}
+transform:
+translate(-50%,-50%)
+scale(1.7);
 
-to{
-transform:rotate(360deg);
+opacity:0;
 }
 
 }
 
-/* =========================
-   TEXT
-========================= */
+/* TEXT */
 
 .app-title{
 
-font-size:2rem;
+font-size:1.9rem;
 font-weight:700;
 
-color:white;
-
-letter-spacing:1px;
+color:#ffffff;
 }
 
 .app-subtitle{
 
 margin-top:10px;
 
-font-size:.95rem;
+font-size:.92rem;
 
-line-height:1.7;
+line-height:1.6;
 
 color:#dbeafe;
 }
 
 .app-location{
 
-margin-top:10px;
+margin-top:8px;
 
-font-size:.82rem;
-
-letter-spacing:1.5px;
+font-size:.8rem;
 
 font-weight:600;
 
-text-transform:uppercase;
+letter-spacing:1px;
 
 color:#7dd3fc;
+
+text-transform:uppercase;
 }
 
-.tagline{
-
-margin-top:14px;
-
-font-size:.85rem;
-
-color:#cbd5e1;
-}
-
-/* =========================
-   PROGRESS
-========================= */
+/* PROGRESS */
 
 .progress{
 
-margin-top:24px;
+margin-top:22px;
 
 height:6px;
 
-border-radius:999px;
+border-radius:99px;
 
 overflow:hidden;
 
@@ -307,11 +280,10 @@ linear-gradient(
 
 background-size:200% 100%;
 
-animation:
-loading 1.2s linear infinite;
+animation:move 1.2s linear infinite;
 }
 
-@keyframes loading{
+@keyframes move{
 
 0%{
 background-position:0% 50%;
@@ -329,10 +301,8 @@ margin-top:14px;
 
 font-size:.85rem;
 
-color:#e2e8f0;
+color:#cbd5e1;
 }
-
-/* FADE */
 
 .fade-out{
 
@@ -346,42 +316,16 @@ pointer-events:none;
 @media(max-width:600px){
 
 .loader-card{
-max-width:330px;
-padding:28px 20px;
-}
-
-.radar{
-width:130px;
-height:130px;
-}
-
-.c1{
-width:50px;
-height:50px;
-}
-
-.c2{
-width:85px;
-height:85px;
-}
-
-.c3{
-width:120px;
-height:120px;
-}
-
-.radar-center{
-width:50px;
-height:50px;
-font-size:1.4rem;
-}
-
-.radar-line{
-width:60px;
+max-width:300px;
+padding:24px 18px;
 }
 
 .app-title{
 font-size:1.6rem;
+}
+
+.app-subtitle{
+font-size:.85rem;
 }
 
 }
@@ -398,17 +342,15 @@ font-size:1.6rem;
 
 <div class="loader-card">
 
-<div class="radar">
+<div class="digital-loader">
 
-<div class="radar-circle c1"></div>
-<div class="radar-circle c2"></div>
-<div class="radar-circle c3"></div>
+<div class="ring ring1"></div>
+<div class="ring ring2"></div>
+<div class="ring ring3"></div>
 
-<div class="radar-center">
+<div class="core">
 ✓
 </div>
-
-<div class="radar-line"></div>
 
 </div>
 
@@ -422,11 +364,7 @@ Absensi Presensi Pegawai
 </div>
 
 <div class="app-location">
-PUSKESMAS PANJATAN I
-</div>
-
-<div class="tagline">
-Presensi Digital Berbasis Lokasi (Geofence)
+Puskesmas Panjatan I
 </div>
 
 <div class="progress">
@@ -434,7 +372,7 @@ Presensi Digital Berbasis Lokasi (Geofence)
 </div>
 
 <div class="loading-text">
-Memverifikasi lokasi perangkat...
+Sinkronisasi GPS & validasi kehadiran pegawai...
 </div>
 
 </div>
@@ -458,7 +396,7 @@ onload="hideLoader()">
 
 function hideLoader(){
 
-setTimeout(()=>{
+setTimeout(() => {
 
 document
 .getElementById('loader')
