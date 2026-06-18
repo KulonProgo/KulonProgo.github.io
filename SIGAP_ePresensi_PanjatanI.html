@@ -7,15 +7,10 @@
 <meta name="viewport"
 content="width=device-width,initial-scale=1.0,viewport-fit=cover,user-scalable=no">
 
-<title>
-SIGAP | Sistem Informasi Gawai Absensi Presensi Pegawai
-</title>
-
-<link rel="icon"
-href="https://lh3.googleusercontent.com/d/1MIRHMi7eVL9qDRNW-SDs4NxR1WXx-ixk">
+<title>SIGAP | Absensi Presensi Pegawai</title>
 
 <link rel="preconnect" href="https://script.google.com">
-<link rel="dns-prefetch" href="//script.google.com">
+
 
 <style>
 
@@ -25,329 +20,502 @@ padding:0;
 box-sizing:border-box;
 }
 
-html,
-body{
+
+html,body{
+
 width:100%;
 height:100%;
+
 overflow:hidden;
-background:#ffffff;
+
 font-family:'Segoe UI',sans-serif;
+
+background:#fff;
+
 }
 
-body{
-position:fixed;
-inset:0;
-}
 
 .iframe-container{
+
 position:fixed;
+
 inset:0;
+
 width:100vw;
+
 height:100dvh;
-background:#ffffff;
-overflow:hidden;
+
 }
+
 
 iframe{
+
 position:absolute;
-top:0;
-left:0;
+
+inset:0;
+
 width:100%;
+
 height:100%;
-border:none;
-display:block;
-background:#ffffff;
+
+border:0;
+
 }
 
-/* SPLASH SCREEN */
+
+
+/* SPLASH */
+
 
 .loader-screen{
 
 position:fixed;
+
 inset:0;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-background:
-linear-gradient(
-135deg,
-#0a1128,
-#0f172a,
-#1d4ed8
-);
 
 z-index:9999;
 
-transition:
-opacity .4s ease,
-visibility .4s ease;
-}
-
-/* CARD */
-
-.loader-card{
-
-width:90%;
-max-width:340px;
-
-padding:30px 24px;
-
-text-align:center;
-
-border-radius:24px;
-
-background:
-rgba(255,255,255,.08);
-
-backdrop-filter:blur(16px);
-
-border:
-1px solid rgba(255,255,255,.10);
-
-box-shadow:
-0 15px 40px rgba(0,0,0,.25);
-}
-
-/* ICON */
-
-.gps-icon{
-
-font-size:2.4rem;
-
-margin-bottom:12px;
-}
-
-/* LOGO */
-
-.logo-circle{
-
-width:72px;
-height:72px;
-
-margin:auto;
-
-padding:8px;
-
-background:#ffffff;
-
-border-radius:50%;
-
 display:flex;
-justify-content:center;
+
 align-items:center;
-}
 
-.logo-circle img{
-
-width:100%;
-height:100%;
-
-object-fit:contain;
-
-border-radius:50%;
-}
-
-/* TEXT */
-
-.app-title{
-
-margin-top:15px;
-
-font-size:1.8rem;
-font-weight:700;
-
-color:#ffffff;
-}
-
-.app-subtitle{
-
-margin-top:10px;
-
-font-size:.92rem;
-
-line-height:1.6;
-
-color:#dbeafe;
-}
-
-.app-location{
-
-margin-top:8px;
-
-font-size:.8rem;
-
-font-weight:600;
-
-letter-spacing:1px;
-
-color:#7dd3fc;
-
-text-transform:uppercase;
-}
-
-/* PROGRESS */
-
-.progress{
-
-margin-top:22px;
-
-height:6px;
-
-border-radius:99px;
-
-overflow:hidden;
+justify-content:center;
 
 background:
-rgba(255,255,255,.15);
-}
 
-.progress-bar{
-
-width:100%;
-height:100%;
-
-background:
 linear-gradient(
-90deg,
-#38bdf8,
-#60a5fa,
-#38bdf8
+135deg,
+#020617,
+#1e3a8a,
+#2563eb
 );
 
-background-size:200% 100%;
 
-animation:move 1.2s linear infinite;
+transition:.4s;
+
 }
 
-.loading-text{
-
-margin-top:14px;
-
-font-size:.85rem;
-
-color:#cbd5e1;
-}
 
 .fade-out{
 
 opacity:0;
+
 visibility:hidden;
-pointer-events:none;
+
 }
 
-@keyframes move{
+
+
+/* CARD */
+
+
+.loader-card{
+
+
+width:90%;
+
+max-width:340px;
+
+padding:32px 25px;
+
+border-radius:28px;
+
+text-align:center;
+
+
+background:
+
+rgba(255,255,255,.12);
+
+
+backdrop-filter:blur(18px);
+
+
+box-shadow:
+
+0 20px 50px #0005;
+
+color:white;
+
+
+}
+
+
+
+/* ICON */
+
+
+.app-icon{
+
+
+width:85px;
+
+height:85px;
+
+margin:auto;
+
+
+border-radius:25px;
+
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+
+background:
+
+linear-gradient(
+135deg,
+#38bdf8,
+#2563eb
+);
+
+
+box-shadow:
+
+0 15px 35px #0005;
+
+
+}
+
+
+.app-icon svg{
+
+width:48px;
+
+height:48px;
+
+fill:white;
+
+}
+
+
+
+
+.app-title{
+
+
+margin-top:18px;
+
+font-size:30px;
+
+font-weight:800;
+
+
+}
+
+
+
+.app-subtitle{
+
+
+margin-top:10px;
+
+line-height:1.6;
+
+color:#dbeafe;
+
+font-size:15px;
+
+}
+
+
+
+.app-location{
+
+
+margin-top:12px;
+
+font-size:13px;
+
+letter-spacing:2px;
+
+font-weight:600;
+
+color:#7dd3fc;
+
+}
+
+
+
+
+/* progress */
+
+
+.progress{
+
+
+height:6px;
+
+margin-top:25px;
+
+background:#ffffff33;
+
+border-radius:20px;
+
+overflow:hidden;
+
+
+}
+
+
+.progress-bar{
+
+
+height:100%;
+
+width:40%;
+
+
+background:white;
+
+
+animation:
+
+load 1.3s infinite;
+
+
+}
+
+
+@keyframes load{
+
 
 0%{
-background-position:0% 50%;
+
+transform:translateX(-120%);
+
 }
+
 
 100%{
-background-position:200% 50%;
-}
+
+transform:translateX(300%);
 
 }
 
-/* MOBILE */
+
+}
+
+
+
+.loading-text{
+
+
+margin-top:15px;
+
+font-size:13px;
+
+color:#cbd5e1;
+
+}
+
+
+
 
 @media(max-width:600px){
 
+
 .loader-card{
+
 max-width:300px;
-padding:24px 18px;
+
+padding:25px 18px;
+
 }
 
-.logo-circle{
-width:60px;
-height:60px;
-}
+
 
 .app-title{
-font-size:1.5rem;
-}
 
-.app-subtitle{
-font-size:.85rem;
+font-size:26px;
+
 }
 
 }
+
 
 </style>
 
+
 </head>
+
+
 
 <body>
 
+
+
 <div class="iframe-container">
+
+
 
 <div class="loader-screen" id="loader">
 
+
+
 <div class="loader-card">
 
-<div class="gps-icon">📍</div>
 
-<div class="logo-circle">
 
-<img
-src="https://lh3.googleusercontent.com/d/1MIRHMi7eVL9qDRNW-SDs4NxR1WXx-ixk"
-alt="SIGAP">
+<div class="app-icon">
+
+
+<!-- ICON MODERN -->
+
+<svg viewBox="0 0 24 24">
+
+<path d="
+M12 2a8 8 0 00-8 8c0 5.5 8 12 8 12s8-6.5 8-12a8 8 0 00-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/>
+
+</svg>
+
 
 </div>
+
+
+
 
 <div class="app-title">
 SIGAP
 </div>
 
+
+
 <div class="app-subtitle">
+
 Sistem Informasi Gawai<br>
+
 Absensi Presensi Pegawai
+
 </div>
+
+
+
 
 <div class="app-location">
-Puskesmas Panjatan I
+
+PUSKESMAS PANJATAN I
+
 </div>
+
+
+
 
 <div class="progress">
+
 <div class="progress-bar"></div>
-</div>
-
-<div class="loading-text">
-Menghubungkan sistem presensi berbasis lokasi...
-</div>
 
 </div>
 
+
+
+<div class="loading-text" id="status">
+
+Menghubungkan sistem presensi...
+
 </div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
 
 <iframe
+
 id="appFrame"
+
 src="https://script.google.com/a/~/macros/s/AKfycbxMslHJzbFSpyqL9CQVP5_3yEI4iAuxlVwoLDhrIQlJYlAnw3BYTnApwQSLMLcHjhDy/exec"
+
+
 allow="geolocation *; camera *; microphone *"
-sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-modals allow-downloads"
+
 loading="eager"
-referrerpolicy="no-referrer"
-allowfullscreen
-onload="hideLoader()">
+
+allowfullscreen>
+
 </iframe>
 
+
+
 </div>
+
+
+
+
 
 <script>
 
+
+const loader =
+document.getElementById("loader");
+
+
+
 function hideLoader(){
 
-setTimeout(() => {
 
-document
-.getElementById('loader')
-.classList.add('fade-out');
+setTimeout(()=>{
 
-}, 300);
+
+loader.classList.add("fade-out");
+
+
+},300);
+
 
 }
 
+
+
+
+
+document
+
+.getElementById("appFrame")
+
+.onload=function(){
+
+
+hideLoader();
+
+
+};
+
+
+
+
+// anti loading selamanya
+
+
+setTimeout(()=>{
+
+
+hideLoader();
+
+
+document.getElementById("status").innerHTML=
+
+"Aplikasi siap digunakan";
+
+
+},6000);
+
+
+
 </script>
 
+
+
 </body>
+
 </html>
