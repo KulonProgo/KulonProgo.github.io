@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -11,15 +12,8 @@ content="width=device-width,initial-scale=1.0,viewport-fit=cover,user-scalable=n
 SIGAP | Sistem Informasi Gawai Absensi Presensi Pegawai
 </title>
 
-<meta name="theme-color" content="#2563eb">
-
-<meta name="mobile-web-app-capable" content="yes">
-
-<meta name="apple-mobile-web-app-capable" content="yes">
-
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-<meta name="apple-mobile-web-app-title" content="SIGAP">
+<link rel="icon"
+href="https://lh3.googleusercontent.com/d/1MIRHMi7eVL9qDRNW-SDs4NxR1WXx-ixk">
 
 <link rel="preconnect" href="https://script.google.com">
 <link rel="dns-prefetch" href="//script.google.com">
@@ -80,7 +74,7 @@ align-items:center;
 background:
 linear-gradient(
 135deg,
-#020617,
+#0a1128,
 #0f172a,
 #1d4ed8
 );
@@ -99,7 +93,7 @@ visibility .4s ease;
 width:90%;
 max-width:340px;
 
-padding:34px 24px;
+padding:30px 24px;
 
 text-align:center;
 
@@ -117,107 +111,52 @@ box-shadow:
 0 15px 40px rgba(0,0,0,.25);
 }
 
-/* DIGITAL LOADER */
+/* ICON */
 
-.digital-loader{
+.gps-icon{
 
-position:relative;
+font-size:2.4rem;
 
-width:120px;
-height:120px;
+margin-bottom:12px;
+}
+
+/* LOGO */
+
+.logo-circle{
+
+width:72px;
+height:72px;
 
 margin:auto;
-margin-bottom:20px;
-}
 
-.ring{
+padding:8px;
 
-position:absolute;
-
-top:50%;
-left:50%;
-
-transform:translate(-50%,-50%);
+background:#ffffff;
 
 border-radius:50%;
-
-border:2px solid rgba(59,130,246,.35);
-}
-
-.ring1{
-width:50px;
-height:50px;
-animation:pulse 2s infinite;
-}
-
-.ring2{
-width:80px;
-height:80px;
-animation:pulse 2s infinite .5s;
-}
-
-.ring3{
-width:110px;
-height:110px;
-animation:pulse 2s infinite 1s;
-}
-
-.core{
-
-position:absolute;
-
-top:50%;
-left:50%;
-
-transform:translate(-50%,-50%);
-
-width:58px;
-height:58px;
-
-border-radius:50%;
-
-background:
-linear-gradient(
-135deg,
-#38bdf8,
-#2563eb
-);
 
 display:flex;
 justify-content:center;
 align-items:center;
-
-color:white;
-
-font-size:24px;
-font-weight:700;
-
-box-shadow:
-0 0 25px rgba(59,130,246,.8);
 }
 
-@keyframes pulse{
+.logo-circle img{
 
-0%{
-opacity:1;
-}
+width:100%;
+height:100%;
 
-100%{
+object-fit:contain;
 
-transform:
-translate(-50%,-50%)
-scale(1.7);
-
-opacity:0;
-}
-
+border-radius:50%;
 }
 
 /* TEXT */
 
 .app-title{
 
-font-size:1.9rem;
+margin-top:15px;
+
+font-size:1.8rem;
 font-weight:700;
 
 color:#ffffff;
@@ -283,18 +222,6 @@ background-size:200% 100%;
 animation:move 1.2s linear infinite;
 }
 
-@keyframes move{
-
-0%{
-background-position:0% 50%;
-}
-
-100%{
-background-position:200% 50%;
-}
-
-}
-
 .loading-text{
 
 margin-top:14px;
@@ -311,6 +238,18 @@ visibility:hidden;
 pointer-events:none;
 }
 
+@keyframes move{
+
+0%{
+background-position:0% 50%;
+}
+
+100%{
+background-position:200% 50%;
+}
+
+}
+
 /* MOBILE */
 
 @media(max-width:600px){
@@ -320,8 +259,13 @@ max-width:300px;
 padding:24px 18px;
 }
 
+.logo-circle{
+width:60px;
+height:60px;
+}
+
 .app-title{
-font-size:1.6rem;
+font-size:1.5rem;
 }
 
 .app-subtitle{
@@ -342,15 +286,13 @@ font-size:.85rem;
 
 <div class="loader-card">
 
-<div class="digital-loader">
+<div class="gps-icon">📍</div>
 
-<div class="ring ring1"></div>
-<div class="ring ring2"></div>
-<div class="ring ring3"></div>
+<div class="logo-circle">
 
-<div class="core">
-✓
-</div>
+<img
+src="https://lh3.googleusercontent.com/d/1MIRHMi7eVL9qDRNW-SDs4NxR1WXx-ixk"
+alt="SIGAP">
 
 </div>
 
@@ -372,7 +314,7 @@ Puskesmas Panjatan I
 </div>
 
 <div class="loading-text">
-Sinkronisasi GPS & validasi kehadiran pegawai...
+Menghubungkan sistem presensi berbasis lokasi...
 </div>
 
 </div>
@@ -402,7 +344,7 @@ document
 .getElementById('loader')
 .classList.add('fade-out');
 
-},300);
+}, 300);
 
 }
 
@@ -410,3 +352,4 @@ document
 
 </body>
 </html>
+```
