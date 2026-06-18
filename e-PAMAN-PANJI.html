@@ -9,11 +9,24 @@ content="width=device-width,initial-scale=1.0,viewport-fit=cover,user-scalable=n
 
 
 <title>
-e-PAMAN PANJI | Planning & Management System
+e-PAMAN PANJI | Planning Management
 </title>
 
 
+<!-- PWA -->
+
+<meta name="theme-color" content="#10b981">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<link rel="manifest" href="manifest.json">
+
+
+
 <link rel="preconnect" href="https://script.google.com">
+
 
 
 <style>
@@ -24,6 +37,7 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 }
+
 
 
 html,body{
@@ -41,19 +55,10 @@ background:#020617;
 
 
 
-.iframe-container{
-
-position:fixed;
-
-inset:0;
-
-}
-
-
 
 iframe{
 
-position:absolute;
+position:fixed;
 
 inset:0;
 
@@ -72,7 +77,7 @@ border:0;
 /* SPLASH */
 
 
-.loader-screen{
+#loader{
 
 
 position:fixed;
@@ -89,24 +94,26 @@ align-items:center;
 justify-content:center;
 
 
+
 background:
 
 radial-gradient(
 circle at top,
-#0f766e,
-#020617 60%
+#059669,
+#022c22 65%,
+#020617
 );
 
 
 
-transition:.5s;
+transition:.4s;
 
 
 }
 
 
 
-.fade-out{
+.hide{
 
 opacity:0;
 
@@ -117,13 +124,12 @@ visibility:hidden;
 
 
 
-
-.loader-card{
+.card{
 
 
 width:90%;
 
-max-width:390px;
+max-width:380px;
 
 
 padding:35px 25px;
@@ -135,14 +141,10 @@ text-align:center;
 border-radius:30px;
 
 
+
 background:
 
-rgba(255,255,255,.08);
-
-
-border:
-
-1px solid rgba(255,255,255,.15);
+rgba(255,255,255,.10);
 
 
 
@@ -152,9 +154,18 @@ blur(20px);
 
 
 
+
+border:
+
+1px solid #ffffff22;
+
+
+
+
 box-shadow:
 
 0 20px 60px #0008;
+
 
 
 color:white;
@@ -167,23 +178,23 @@ color:white;
 
 
 
+/* ICON */
 
-/* FUTURE ICON */
-
-
-.future-icon{
+.icon{
 
 
-width:90px;
+width:95px;
 
-height:90px;
+height:95px;
+
 
 
 margin:auto;
 
 
 
-border-radius:28px;
+border-radius:30px;
+
 
 
 
@@ -195,19 +206,22 @@ justify-content:center;
 
 
 
+
 background:
 
 linear-gradient(
 135deg,
-#06b6d4,
-#10b981
+#34d399,
+#06b6d4
 );
 
 
 
 box-shadow:
 
-0 15px 40px #06b6d466;
+0 0 45px #10b98188;
+
+
 
 
 animation:
@@ -219,12 +233,10 @@ float 3s infinite;
 
 
 
-.future-icon svg{
+.icon svg{
 
 
-width:55px;
-
-height:55px;
+width:58px;
 
 fill:white;
 
@@ -249,43 +261,32 @@ transform:translateY(-8px);
 
 
 
-
-
-.app-title{
+h1{
 
 
 margin-top:20px;
 
 
-font-size:30px;
+font-size:28px;
 
 
 font-weight:800;
 
 
-
-letter-spacing:.5px;
-
-
 }
 
 
 
-
-
-.app-subtitle{
+p{
 
 
 margin-top:12px;
 
 
-font-size:15px;
+color:#d1fae5;
 
 
 line-height:1.7;
-
-
-color:#ccfbf1;
 
 
 }
@@ -293,10 +294,11 @@ color:#ccfbf1;
 
 
 
-.app-location{
+
+.location{
 
 
-margin-top:14px;
+margin-top:15px;
 
 
 font-size:13px;
@@ -305,10 +307,12 @@ font-size:13px;
 letter-spacing:2px;
 
 
+
+font-weight:600;
+
+
+
 color:#67e8f9;
-
-
-font-weight:700;
 
 
 }
@@ -317,19 +321,20 @@ font-weight:700;
 
 
 
-.tagline{
+
+.tag{
 
 
-margin-top:14px;
+margin-top:10px;
 
 
-font-size:13px;
-
-
-font-style:italic;
+font-size:12px;
 
 
 color:#a7f3d0;
+
+
+font-style:italic;
 
 
 }
@@ -347,7 +352,7 @@ margin-top:25px;
 height:7px;
 
 
-background:#ffffff22;
+background:#ffffff33;
 
 
 border-radius:20px;
@@ -361,29 +366,23 @@ overflow:hidden;
 
 
 
-.progress-bar{
+.bar{
 
 
 height:100%;
 
 
-width:35%;
+width:40%;
 
 
 
-background:
-
-linear-gradient(
-90deg,
-#22d3ee,
-#34d399
-);
+background:white;
 
 
 
 animation:
 
-loading 1.3s infinite;
+load 1.2s infinite;
 
 
 }
@@ -391,8 +390,7 @@ loading 1.3s infinite;
 
 
 
-
-@keyframes loading{
+@keyframes load{
 
 
 0%{
@@ -414,50 +412,8 @@ transform:translateX(300%);
 
 
 
-
-
-.loading-text{
-
-
-margin-top:15px;
-
-
-font-size:13px;
-
-
-color:#d1fae5;
-
-
-}
-
-
-
-
-
-
-@media(max-width:600px){
-
-
-.loader-card{
-
-max-width:320px;
-
-}
-
-
-
-.app-title{
-
-font-size:26px;
-
-}
-
-
-}
-
-
-
 </style>
+
 
 
 </head>
@@ -467,30 +423,58 @@ font-size:26px;
 
 
 
-<div class="iframe-container">
+
+
+<iframe
+
+
+id="app"
 
 
 
-<div class="loader-screen" id="loader">
+src="https://script.google.com/a/~/macros/s/AKfycbwcDQ1HOB4hhZSFECOUVVcBtm4ShpQDL835EtN-Vmnyu_ybXusOjURQGk96LU0551Ingg/exec"
 
 
 
-<div class="loader-card">
+allow="geolocation *;camera *;microphone *"
+
+
+
+loading="eager">
+
+
+</iframe>
 
 
 
 
 
-<div class="future-icon">
+
+<div id="loader">
 
 
-<!-- ICON FUTURISTIC -->
+
+<div class="card">
+
+
+
+
+
+<div class="icon">
+
+
+
+<!-- FUTURE MANAGEMENT ICON -->
+
 
 <svg viewBox="0 0 24 24">
 
 
 <path d="
-M4 4h16v16H4V4zm3 10h2V8H7v6zm4 0h2V5h-2v9zm4 0h2v-4h-2v4z"/>
+
+M3 3h18v18H3V3zm4 12h2V8H7v7zm4 0h2V5h-2v10zm4 0h2v-4h-2v4z
+
+"/>
 
 
 </svg>
@@ -503,43 +487,52 @@ M4 4h16v16H4V4zm3 10h2V8H7v6zm4 0h2V5h-2v9zm4 0h2v-4h-2v4z"/>
 
 
 
-<div class="app-title">
+
+
+<h1>
 
 e-PAMAN PANJI
 
-</div>
+</h1>
 
 
 
 
 
-<div class="app-subtitle">
+<p>
+
 
 Sistem PerencanaAn & MANajemen<br>
 
 Puskesmas PANJatan I
 
+
+</p>
+
+
+
+
+
+<div class="location">
+
+
+DIGITAL MANAGEMENT CENTER
+
+
 </div>
 
 
 
 
 
-<div class="app-location">
+<div class="tag">
 
-DIGITAL COMMAND CENTER
-
-</div>
-
-
-
-
-
-<div class="tagline">
 
 Planning • Monitoring • Evaluation • Performance
 
+
 </div>
+
 
 
 
@@ -547,7 +540,9 @@ Planning • Monitoring • Evaluation • Performance
 
 <div class="progress">
 
-<div class="progress-bar"></div>
+
+<div class="bar"></div>
+
 
 </div>
 
@@ -555,11 +550,13 @@ Planning • Monitoring • Evaluation • Performance
 
 
 
-<div class="loading-text" id="status">
+<p>
+
 
 Menyiapkan sistem manajemen...
 
-</div>
+
+</p>
 
 
 
@@ -571,30 +568,6 @@ Menyiapkan sistem manajemen...
 
 
 
-
-
-
-<iframe
-
-id="appFrame"
-
-src="https://script.google.com/a/~/macros/s/AKfycbwcDQ1HOB4hhZSFECOUVVcBtm4ShpQDL835EtN-Vmnyu_ybXusOjURQGk96LU0551Ingg/exec"
-
-
-allow="geolocation *; camera *; microphone *"
-
-
-loading="eager"
-
-
-allowfullscreen>
-
-</iframe>
-
-
-
-
-</div>
 
 
 
@@ -611,29 +584,21 @@ document.getElementById("loader");
 
 
 
-function hideLoader(){
+document
+
+.getElementById("app")
+
+.onload=function(){
 
 
 setTimeout(()=>{
 
 
-loader.classList.add("fade-out");
+loader.classList.add("hide");
 
 
 },300);
 
-
-}
-
-
-
-
-document
-.getElementById("appFrame")
-.onload=function(){
-
-
-hideLoader();
 
 
 };
@@ -641,19 +606,33 @@ hideLoader();
 
 
 
-// anti loading forever
+
+// anti loading abadi
+
 
 setTimeout(()=>{
 
 
-hideLoader();
-
-
-document.getElementById("status").innerHTML =
-"Sistem siap digunakan";
+loader.classList.add("hide");
 
 
 },6000);
+
+
+
+
+
+
+// PWA
+
+
+if("serviceWorker" in navigator){
+
+
+navigator.serviceWorker.register("sw.js");
+
+
+}
 
 
 
@@ -663,4 +642,5 @@ document.getElementById("status").innerHTML =
 
 
 </body>
+
 </html>
