@@ -1,49 +1,299 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PKM Pjt1</title>
-  <link rel="icon" href="https://i1.wp.com/www.freepnglogos.com/uploads/logo-puskesmas-png/logo-puskesmas-terbaru-sesuai-permenkes-tahun-1.png" type="image/png">
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      font-family: sans-serif;
-    }
-    .iframe-container {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-    }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-    .loader {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 1.2rem;
-      color: #666;
-      z-index: 10;
-    }
-  </style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Portal Aplikasi Puskesmas Kabupaten Kulon Progo</title>
+
+<meta name="theme-color" content="#0f766e">
+
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+min-height:100vh;
+
+background:
+linear-gradient(
+135deg,
+#f0fdf4,
+#ecfeff
+);
+
+padding:20px;
+}
+
+.header{
+
+background:
+linear-gradient(
+135deg,
+#065f46,
+#0f766e
+);
+
+color:white;
+
+padding:30px 24px;
+
+border-radius:24px;
+
+margin-bottom:24px;
+
+box-shadow:
+0 12px 30px rgba(0,0,0,.15);
+}
+
+.header h1{
+
+font-size:1.8rem;
+margin-bottom:10px;
+}
+
+.header p{
+
+opacity:.9;
+line-height:1.6;
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:18px;
+}
+
+.card{
+
+background:white;
+
+border-radius:22px;
+
+padding:22px;
+
+text-decoration:none;
+
+color:#111827;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.08);
+
+transition:.25s;
+}
+
+.card:hover{
+
+transform:
+translateY(-6px);
+
+box-shadow:
+0 15px 30px rgba(0,0,0,.12);
+}
+
+.icon{
+
+font-size:2.6rem;
+
+margin-bottom:14px;
+}
+
+.title{
+
+font-size:1.05rem;
+font-weight:700;
+}
+
+.desc{
+
+margin-top:8px;
+
+font-size:.88rem;
+
+color:#6b7280;
+
+line-height:1.5;
+}
+
+.footer{
+
+margin-top:30px;
+
+text-align:center;
+
+font-size:.85rem;
+
+color:#64748b;
+}
+
+.badge{
+
+display:inline-block;
+
+padding:4px 10px;
+
+border-radius:999px;
+
+font-size:.75rem;
+
+margin-top:10px;
+
+background:#dcfce7;
+
+color:#166534;
+}
+
+</style>
+
 </head>
+
 <body>
-  <div class="iframe-container">
-    <div class="loader" id="loader">Loading app...</div>
-    <iframe 
-      src="https://script.google.com/macros/s/AKfycby7LQdYPYiVXroG_XhTijQ6vWQSq03qUZSF0OJL9xEI7fh3bsaNxFeVKCPJSR8I_YKl/exec" 
-      title="PJT1 Web App"
-      onload="document.getElementById('loader').style.display='none';"
-      allowfullscreen>
-    </iframe>
-  </div>
+
+<div class="header">
+
+<h1>
+🏥 Portal Aplikasi Puskesmas Kabupaten Kulon Progo
+</h1>
+
+<p>
+Pusat akses aplikasi digital seluruh Puskesmas di Kabupaten Kulon Progo.
+</p>
+
+</div>
+
+<div class="grid">
+
+<a
+class="card"
+href="e-PortalDigital-PanjatanSiji.html">
+
+<div class="icon">🏥</div>
+
+<div class="title">
+Puskesmas Panjatan I
+</div>
+
+<div class="desc">
+Portal Digital, SIGAP, e-PAMAN PANJI, SAPA PANJI, CKG dan aplikasi lainnya.
+</div>
+
+<div class="badge">
+Aktif
+</div>
+
+</a>
+
+<a
+class="card"
+href="#">
+
+<div class="icon">🏥</div>
+
+<div class="title">
+Puskesmas Panjatan II
+</div>
+
+<div class="desc">
+Portal aplikasi digital Puskesmas Panjatan II.
+</div>
+
+</a>
+
+<a
+class="card"
+href="#">
+
+<div class="icon">🏥</div>
+
+<div class="title">
+Puskesmas Galur I
+</div>
+
+<div class="desc">
+Portal aplikasi digital Puskesmas Galur I.
+</div>
+
+</a>
+
+<a
+class="card"
+href="#">
+
+<div class="icon">🏥</div>
+
+<div class="title">
+Puskesmas Galur II
+</div>
+
+<div class="desc">
+Portal aplikasi digital Puskesmas Galur II.
+</div>
+
+</a>
+
+<a
+class="card"
+href="#">
+
+<div class="icon">🏥</div>
+
+<div class="title">
+Puskesmas Wates
+</div>
+
+<div class="desc">
+Portal aplikasi digital Puskesmas Wates.
+</div>
+
+</a>
+
+<a
+class="card"
+href="#">
+
+<div class="icon">🏥</div>
+
+<div class="title">
+Puskesmas Sentolo
+</div>
+
+<div class="desc">
+Portal aplikasi digital Puskesmas Sentolo.
+</div>
+
+</a>
+
+</div>
+
+<div class="footer">
+
+© 2026 Dinas Kesehatan Kabupaten Kulon Progo
+
+</div>
+
+<script>
+
+if ('serviceWorker' in navigator) {
+
+navigator.serviceWorker.register('sw.js');
+
+}
+
+</script>
+
 </body>
 </html>
-
