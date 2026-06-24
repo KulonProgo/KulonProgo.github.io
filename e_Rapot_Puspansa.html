@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0,viewport-fit=cover,user-scalable=no">
+
+<title>e-Rapot PUSPANSA</title>
+
+<meta name="theme-color" content="#1e3a8a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<link rel="manifest" href="manifest.json">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html,body{
+width:100%;
+height:100%;
+overflow:hidden;
+font-family:'Segoe UI',sans-serif;
+background:#020617;
+}
+
+iframe{
+position:fixed;
+inset:0;
+width:100%;
+height:100%;
+border:0;
+}
+
+/* =====================
+   SPLASH
+===================== */
+
+#loader{
+position:fixed;
+inset:0;
+z-index:9999;
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:
+radial-gradient(
+circle at top,
+#1e3a8a,
+#020617 70%
+);
+
+transition:.5s;
+}
+
+.hide{
+opacity:0;
+visibility:hidden;
+}
+
+.card{
+width:90%;
+max-width:360px;
+padding:35px 25px;
+text-align:center;
+border-radius:30px;
+
+background:rgba(59,130,246,.08);
+backdrop-filter:blur(20px);
+border:1px solid #3b82f633;
+
+color:#eff6ff;
+
+box-shadow:
+0 20px 60px #0008;
+}
+
+/* ICON */
+
+.icon{
+width:120px;
+height:120px;
+margin:auto;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+
+background:
+radial-gradient(
+circle,
+#60a5fa,
+#2563eb 40%,
+#020617 75%
+);
+
+box-shadow:
+0 0 40px #2563eb66;
+
+overflow:hidden;
+}
+
+.icon::before{
+content:"";
+position:absolute;
+width:32px;
+height:32px;
+border-radius:50%;
+background:#eff6ff;
+box-shadow:0 0 25px #93c5fd;
+animation:pulse 1.8s infinite;
+}
+
+.icon::after{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+border-radius:50%;
+border:2px solid #93c5fd;
+animation:wave 2.5s infinite;
+}
+
+.signal{
+position:absolute;
+width:75px;
+height:75px;
+border-radius:50%;
+border:2px solid #60a5fa;
+animation:signal 2s infinite;
+}
+
+.signal:nth-child(2){animation-delay:.7s;}
+.signal:nth-child(3){animation-delay:1.4s;}
+
+@keyframes wave{
+0%{transform:scale(.4);opacity:1;}
+100%{transform:scale(1.7);opacity:0;}
+}
+
+@keyframes signal{
+0%{transform:scale(.5);opacity:.8;}
+100%{transform:scale(1.6);opacity:0;}
+}
+
+@keyframes pulse{
+0%,100%{transform:scale(.8);}
+50%{transform:scale(1.3);}
+}
+
+h1{
+margin-top:20px;
+font-size:28px;
+letter-spacing:2px;
+color:#93c5fd;
+}
+
+p{
+margin-top:12px;
+color:#dbeafe;
+line-height:1.6;
+}
+
+.location{
+margin-top:18px;
+font-size:13px;
+letter-spacing:3px;
+color:#60a5fa;
+}
+
+.progress{
+margin-top:25px;
+height:7px;
+border-radius:20px;
+background:#1e3a8a;
+overflow:hidden;
+}
+
+.bar{
+height:100%;
+width:40%;
+background:#3b82f6;
+animation:load 1.2s infinite;
+}
+
+@keyframes load{
+0%{transform:translateX(-120%)}
+100%{transform:translateX(300%)}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- GOOGLE APPS SCRIPT -->
+
+<iframe
+id="app"
+src="https://script.google.com/a/~/macros/s/AKfycbyWKNYiwCSot4JA6sgPyD4f1ep6g6w-OEzEO7PvesuR0TLifItN6Lf3MFZ8i-mBtU3dEw/exec"
+allow="geolocation *;camera *;microphone *"
+loading="eager">
+</iframe>
+
+<!-- LOADING -->
+
+<div id="loader">
+
+<div class="card">
+
+<div class="icon">
+<div class="signal"></div>
+<div class="signal"></div>
+<div class="signal"></div>
+</div>
+
+<h1>e-RAPOT</h1>
+
+<p>
+PUSPANSA<br>
+Presensi • TPP • Kompetensi
+</p>
+
+<div class="location">
+PUSKESMAS PANJATAN I
+</div>
+
+<div class="progress">
+<div class="bar"></div>
+</div>
+
+<p>
+Memuat sistem e-Rapot...
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+const loader = document.getElementById("loader");
+
+document.getElementById("app").onload=function(){
+setTimeout(()=>{
+loader.classList.add("hide");
+},300);
+};
+
+// fallback
+setTimeout(()=>{
+loader.classList.add("hide");
+},6000);
+
+// PWA
+if("serviceWorker" in navigator){
+navigator.serviceWorker.register("sw.js");
+}
+
+</script>
+
+</body>
+</html>
