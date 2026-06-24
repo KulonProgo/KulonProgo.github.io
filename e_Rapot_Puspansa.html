@@ -9,10 +9,6 @@ content="width=device-width,initial-scale=1.0,viewport-fit=cover,user-scalable=n
 <title>e-Rapot PUSPANSA</title>
 
 <meta name="theme-color" content="#1e3a8a">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-
-<link rel="manifest" href="manifest.json">
 
 <style>
 
@@ -38,9 +34,7 @@ height:100%;
 border:0;
 }
 
-/* =====================
-   SPLASH
-===================== */
+/* LOADER */
 
 #loader{
 position:fixed;
@@ -50,13 +44,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 
-background:
-radial-gradient(
-circle at top,
-#1e3a8a,
-#020617 70%
-);
-
+background:radial-gradient(circle at top,#1e3a8a,#020617 70%);
 transition:.5s;
 }
 
@@ -77,12 +65,12 @@ backdrop-filter:blur(20px);
 border:1px solid #3b82f633;
 
 color:#eff6ff;
-
-box-shadow:
-0 20px 60px #0008;
+box-shadow:0 20px 60px #0008;
 }
 
-/* ICON */
+/* =====================
+   RAPOT ANIMATION
+===================== */
 
 .icon{
 width:120px;
@@ -92,69 +80,80 @@ position:relative;
 display:flex;
 align-items:center;
 justify-content:center;
-border-radius:50%;
-
-background:
-radial-gradient(
-circle,
-#60a5fa,
-#2563eb 40%,
-#020617 75%
-);
-
-box-shadow:
-0 0 40px #2563eb66;
-
-overflow:hidden;
 }
 
-.icon::before{
-content:"";
-position:absolute;
-width:32px;
-height:32px;
-border-radius:50%;
-background:#eff6ff;
-box-shadow:0 0 25px #93c5fd;
-animation:pulse 1.8s infinite;
+/* buku */
+
+.book{
+width:80px;
+height:100px;
+background:#1e40af;
+border-radius:6px;
+position:relative;
+box-shadow:0 10px 30px #0008;
+animation:float 2s ease-in-out infinite;
 }
 
-.icon::after{
+.book::before{
 content:"";
 position:absolute;
-width:100%;
+left:8px;
+top:0;
+width:4px;
 height:100%;
-border-radius:50%;
-border:2px solid #93c5fd;
-animation:wave 2.5s infinite;
+background:#93c5fd;
 }
 
-.signal{
+/* checklist */
+
+.check{
 position:absolute;
-width:75px;
-height:75px;
+width:20px;
+height:20px;
 border-radius:50%;
-border:2px solid #60a5fa;
-animation:signal 2s infinite;
+background:#22c55e;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#fff;
+font-size:12px;
+font-weight:bold;
+
+animation:pop 1.5s infinite;
 }
 
-.signal:nth-child(2){animation-delay:.7s;}
-.signal:nth-child(3){animation-delay:1.4s;}
-
-@keyframes wave{
-0%{transform:scale(.4);opacity:1;}
-100%{transform:scale(1.7);opacity:0;}
+.check:nth-child(2){
+top:20px;
+right:-10px;
+animation-delay:.3s;
 }
 
-@keyframes signal{
-0%{transform:scale(.5);opacity:.8;}
-100%{transform:scale(1.6);opacity:0;}
+.check:nth-child(3){
+top:50px;
+right:-10px;
+animation-delay:.6s;
 }
 
-@keyframes pulse{
-0%,100%{transform:scale(.8);}
-50%{transform:scale(1.3);}
+.check:nth-child(4){
+top:80px;
+right:-10px;
+animation-delay:.9s;
 }
+
+/* animasi */
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+}
+
+@keyframes pop{
+0%{transform:scale(0);opacity:0;}
+50%{transform:scale(1.2);opacity:1;}
+100%{transform:scale(1);opacity:1;}
+}
+
+/* TEXT */
 
 h1{
 margin-top:20px;
@@ -175,6 +174,8 @@ font-size:13px;
 letter-spacing:3px;
 color:#60a5fa;
 }
+
+/* PROGRESS */
 
 .progress{
 margin-top:25px;
@@ -202,7 +203,7 @@ animation:load 1.2s infinite;
 
 <body>
 
-<!-- GOOGLE APPS SCRIPT -->
+<!-- IFRAME -->
 
 <iframe
 id="app"
@@ -218,9 +219,13 @@ loading="eager">
 <div class="card">
 
 <div class="icon">
-<div class="signal"></div>
-<div class="signal"></div>
-<div class="signal"></div>
+
+<div class="book"></div>
+
+<div class="check">✓</div>
+<div class="check">✓</div>
+<div class="check">✓</div>
+
 </div>
 
 <h1>e-RAPOT</h1>
@@ -239,7 +244,7 @@ PUSKESMAS PANJATAN I
 </div>
 
 <p>
-Memuat sistem e-Rapot...
+Memuat penilaian pegawai...
 </p>
 
 </div>
@@ -260,11 +265,6 @@ loader.classList.add("hide");
 setTimeout(()=>{
 loader.classList.add("hide");
 },6000);
-
-// PWA
-if("serviceWorker" in navigator){
-navigator.serviceWorker.register("sw.js");
-}
 
 </script>
 
