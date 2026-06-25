@@ -1,48 +1,316 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Menu Drive Perencanaan Puskesmas Dinas Kesehatan KP </title>
-  <link rel="icon" href="https://i1.wp.com/www.freepnglogos.com/uploads/logo-puskesmas-png/logo-puskesmas-terbaru-sesuai-permenkes-tahun-1.png" type="image/png">
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      font-family: sans-serif;
-    }
-    .iframe-container {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-    }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-    .loader {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 1.2rem;
-      color: #666;
-      z-index: 10;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+
+<title>
+Menu Drive Perencanaan Puskesmas Dinas Kesehatan Kulon Progo
+</title>
+
+<link rel="icon"
+href="https://i1.wp.com/www.freepnglogos.com/uploads/logo-puskesmas-png/logo-puskesmas-terbaru-sesuai-permenkes-tahun-1.png">
+
+<!-- FAST LOAD -->
+<link rel="preconnect" href="https://script.google.com">
+<link rel="dns-prefetch" href="//script.google.com">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html,body{
+width:100%;
+height:100%;
+overflow:hidden;
+background:#ffffff;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+position:fixed;
+inset:0;
+}
+
+/* IFRAME FULL */
+
+.iframe-container{
+position:fixed;
+inset:0;
+width:100vw;
+height:100dvh;
+background:#ffffff;
+overflow:hidden;
+}
+
+iframe{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+border:none;
+display:block;
+background:#ffffff;
+}
+
+/* LOADER */
+
+.loader-screen{
+
+position:fixed;
+inset:0;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+linear-gradient(
+135deg,
+#0f172a,
+#0b4b8f,
+#0f766e
+);
+
+z-index:9999;
+
+transition:
+opacity .6s ease,
+visibility .6s ease;
+}
+
+/* GLOW EFFECT */
+
+.glow{
+position:absolute;
+border-radius:50%;
+filter:blur(90px);
+opacity:.35;
+}
+
+.glow1{
+width:280px;
+height:280px;
+background:#0ea5e9;
+top:-120px;
+left:-120px;
+}
+
+.glow2{
+width:280px;
+height:280px;
+background:#22c55e;
+right:-120px;
+bottom:-120px;
+}
+
+/* CARD */
+
+.loader-box{
+
+position:relative;
+z-index:10;
+
+width:92%;
+max-width:420px;
+
+padding:30px 24px;
+
+text-align:center;
+
+border-radius:30px;
+
+background:
+rgba(255,255,255,.12);
+
+backdrop-filter:blur(20px);
+
+border:
+1px solid rgba(255,255,255,.15);
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.25);
+
+color:white;
+}
+
+/* LOGO */
+
+.logo-circle{
+
+width:90px;
+height:90px;
+
+margin:auto;
+
+padding:8px;
+
+background:white;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+box-shadow:
+0 8px 25px rgba(0,0,0,.2);
+
+animation:float 3s ease infinite;
+}
+
+.logo-circle img{
+width:100%;
+height:100%;
+object-fit:contain;
+border-radius:50%;
+}
+
+/* TEXT */
+
+.app-title{
+margin-top:20px;
+font-size:1.5rem;
+font-weight:700;
+line-height:1.4;
+}
+
+.subtitle{
+margin-top:10px;
+font-size:1rem;
+line-height:1.6;
+color:#dbeafe;
+}
+
+.tagline{
+margin-top:10px;
+font-size:.8rem;
+font-weight:600;
+letter-spacing:1px;
+color:#7dd3fc;
+text-transform:uppercase;
+}
+
+/* PROGRESS */
+
+.progress{
+margin-top:20px;
+width:100%;
+height:10px;
+border-radius:999px;
+overflow:hidden;
+background:rgba(255,255,255,.15);
+}
+
+.progress-bar{
+width:100%;
+height:100%;
+border-radius:999px;
+
+background:
+linear-gradient(
+90deg,
+#00d4ff,
+#14b8a6,
+#00d4ff
+);
+
+background-size:200% 100%;
+
+animation:shimmer 1.5s linear infinite;
+}
+
+.loading-text{
+margin-top:14px;
+font-size:.9rem;
+color:#e2e8f0;
+}
+
+/* ANIMATION */
+
+@keyframes shimmer{
+0%{background-position:0% 50%;}
+100%{background-position:200% 50%;}
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
+}
+
+.fade-out{
+opacity:0;
+visibility:hidden;
+pointer-events:none;
+}
+
+</style>
 </head>
+
 <body>
-  <div class="iframe-container">
-    <div class="loader" id="loader">Loading app...</div>
-    <iframe 
-      src="https://script.google.com/a/~/macros/s/AKfycbw01j9Pj6AIUAF-n_HYfXQH9qNCuKjyt0hjR0r8plVIax2GDU8F9ijphQJKFCoKETbt/exec" 
-      title="Menu Drive Perencanaan"
-      onload="document.getElementById('loader').style.display='none';"
-      allowfullscreen>
-    </iframe>
-  </div>
+
+<div class="iframe-container">
+
+<div class="loader-screen" id="loader">
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
+<div class="loader-box">
+
+<div class="logo-circle">
+<img src="https://i1.wp.com/www.freepnglogos.com/uploads/logo-puskesmas-png/logo-puskesmas-terbaru-sesuai-permenkes-tahun-1.png">
+</div>
+
+<div class="app-title">
+Menu Drive Perencanaan
+</div>
+
+<div class="subtitle">
+Puskesmas Dinas Kesehatan<br>
+Kabupaten Kulon Progo
+</div>
+
+<div class="tagline">
+Akses Data Perencanaan Terpadu
+</div>
+
+<div class="progress">
+<div class="progress-bar"></div>
+</div>
+
+<div class="loading-text">
+Memuat aplikasi...
+</div>
+
+</div>
+
+</div>
+
+<iframe
+src="https://script.google.com/macros/s/AKfycbw01j9Pj6AIUAF-n_HYfXQH9qNCuKjyt0hjR0r8plVIax2GDU8F9ijphQJKFCoKETbt/exec"
+title="Menu Drive Perencanaan"
+loading="eager"
+allowfullscreen
+onload="hideLoader()">
+</iframe>
+
+</div>
+
+<script>
+
+function hideLoader(){
+setTimeout(function(){
+document.getElementById('loader').classList.add('fade-out');
+},600);
+}
+
+</script>
+
 </body>
 </html>
