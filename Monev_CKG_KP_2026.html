@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover,user-scalable=no">
+
+<title>MONEV CKG | Puskesmas Kulon Progo</title>
+
+<meta name="theme-color" content="#0f766e">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+html,body{
+width:100%;
+height:100%;
+overflow:hidden;
+font-family:'Segoe UI',system-ui,sans-serif;
+background:#020617;
+}
+
+/* IFRAME */
+
+iframe{
+position:fixed;
+inset:0;
+width:100%;
+height:100%;
+border:0;
+background:#fff;
+}
+
+/* LOADER */
+
+#loader{
+position:fixed;
+inset:0;
+z-index:9999;
+display:flex;
+align-items:center;
+justify-content:center;
+background:radial-gradient(circle at top,#134e4a,#020617 70%);
+transition:.5s;
+}
+
+.hide{
+opacity:0;
+visibility:hidden;
+}
+
+.card{
+width:90%;
+max-width:360px;
+padding:35px 25px;
+text-align:center;
+border-radius:28px;
+
+background:rgba(148,163,184,.08);
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.15);
+
+color:#f1f5f9;
+box-shadow:0 20px 60px #0008;
+}
+
+/* ================= ICON MONEV ================= */
+
+.icon{
+width:140px;
+height:140px;
+margin:auto;
+position:relative;
+}
+
+/* kertas */
+
+.paper{
+width:80px;
+height:100px;
+background:#f8fafc;
+border-radius:8px;
+margin:auto;
+position:relative;
+box-shadow:0 10px 25px #0005;
+animation:float 3s ease-in-out infinite;
+}
+
+/* checklist */
+
+.check{
+width:14px;
+height:14px;
+border-radius:3px;
+border:2px solid #14b8a6;
+position:absolute;
+left:10px;
+}
+
+.check::after{
+content:"";
+position:absolute;
+width:6px;
+height:10px;
+border-right:2px solid #14b8a6;
+border-bottom:2px solid #14b8a6;
+transform:rotate(45deg) scale(0);
+top:-2px;
+left:3px;
+animation:checkAnim 2s infinite;
+}
+
+.check:nth-child(1){top:15px}
+.check:nth-child(2){top:40px;animation-delay:.3s}
+.check:nth-child(3){top:65px;animation-delay:.6s}
+
+/* garis */
+
+.line{
+position:absolute;
+left:30px;
+height:4px;
+background:#cbd5f5;
+border-radius:3px;
+}
+
+.line:nth-child(4){top:18px;width:45px}
+.line:nth-child(5){top:43px;width:50px}
+.line:nth-child(6){top:68px;width:40px}
+
+/* grafik kecil (monitoring) */
+
+.chart{
+position:absolute;
+bottom:-10px;
+right:-10px;
+display:flex;
+gap:4px;
+align-items:flex-end;
+}
+
+.bar{
+width:6px;
+background:#34d399;
+border-radius:2px;
+animation:grow 1.5s infinite;
+}
+
+.bar:nth-child(1){height:12px}
+.bar:nth-child(2){height:18px}
+.bar:nth-child(3){height:24px}
+
+/* animasi */
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-8px)}
+}
+
+@keyframes checkAnim{
+0%{transform:scale(0)}
+50%{transform:scale(1)}
+100%{transform:scale(1)}
+}
+
+@keyframes grow{
+0%{transform:scaleY(.5)}
+50%{transform:scaleY(1)}
+100%{transform:scaleY(.6)}
+}
+
+/* TEXT */
+
+h1{
+margin-top:20px;
+font-size:22px;
+color:#5eead4;
+}
+
+p{
+margin-top:12px;
+color:#e2e8f0;
+line-height:1.6;
+}
+
+.location{
+margin-top:15px;
+font-size:13px;
+letter-spacing:2px;
+color:#94a3b8;
+}
+
+/* PROGRESS */
+
+.progress{
+margin-top:22px;
+height:6px;
+border-radius:20px;
+background:#1e293b;
+overflow:hidden;
+}
+
+.progressbar{
+height:100%;
+width:40%;
+background:linear-gradient(90deg,#2dd4bf,#34d399);
+animation:load 1.2s infinite;
+}
+
+@keyframes load{
+0%{transform:translateX(-120%)}
+100%{transform:translateX(300%)}
+}
+
+/* FLOAT HOME */
+
+.home-btn{
+position:fixed;
+right:18px;
+bottom:18px;
+width:50px;
+height:50px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:rgba(15,23,42,.55);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.2);
+color:#fff;
+z-index:99999;
+box-shadow:0 8px 25px rgba(0,0,0,.3);
+transition:.25s;
+}
+
+.home-btn:hover{
+transform:translateY(-3px);
+background:#14b8a6;
+}
+
+.home-btn svg{
+width:22px;
+height:22px;
+fill:#fff;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<iframe
+id="app"
+src="https://script.google.com/a/~/macros/s/AKfycbxmwnJm4SG3lsV1uJZASo_63gzwB8xUR48yGyCZz41j5m7p1w_9zMd42t6uEN-swv80/exec"
+allow="geolocation *;camera *;microphone *"
+loading="eager">
+</iframe>
+
+<div id="loader">
+
+<div class="card">
+
+<div class="icon">
+
+<div class="paper">
+
+<div class="check"></div>
+<div class="check"></div>
+<div class="check"></div>
+
+<div class="line"></div>
+<div class="line"></div>
+<div class="line"></div>
+
+</div>
+
+<div class="chart">
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+</div>
+
+</div>
+
+<h1>MONEV CKG</h1>
+
+<p>
+Monitoring & Evaluasi<br>
+Cek Kesehatan Gratis
+</p>
+
+<div class="location">
+PUSKESMAS • KULON PROGO
+</div>
+
+<div class="progress">
+<div class="progressbar"></div>
+</div>
+
+<p>Memuat dashboard monitoring...</p>
+
+</div>
+
+</div>
+
+<a href="https://puskesmaspanjatansatu.github.io/portal-digital/" class="home-btn">
+<svg viewBox="0 0 24 24">
+<path d="M12 3.1 2.6 11a1 1 0 0 0 .64 1.77H5v7a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-7h1.76A1 1 0 0 0 21.4 11L12 3.1z"/>
+</svg>
+</a>
+
+<script>
+
+const loader = document.getElementById("loader");
+
+document.getElementById("app").onload=function(){
+setTimeout(()=>{
+loader.classList.add("hide");
+},300);
+};
+
+setTimeout(()=>{
+loader.classList.add("hide");
+},8000);
+
+</script>
+
+</body>
+</html>
